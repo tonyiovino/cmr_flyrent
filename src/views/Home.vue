@@ -1,20 +1,31 @@
 <template>
 	<div class="home">
-		<h1>Questo è il client, il server verrà aggiunto in un secondo momento</h1>
-
-		<h1>Creiamo una pagina per la gestione delle automobili</h1>
-
-		<ul>
-			<li>Gestione anagrafica</li>
-			<li>Preventivi</li>
-			<li>Scoring</li>
-			<li>Ordini in corso</li>
-			<li>Gestione contratti</li>
-			<li>Modulistica</li>
-			<li>Comunicazioni</li>
-			<li>Note</li>
+		<ul class="unorder-list">
+			<li class="list card">
+				<router-link to="/anagrafica" class="link">Gestione anagrafica</router-link>
+			</li>
+			<li class="list card">
+				<router-link to="/preventivi" class="link">Preventivi</router-link>
+			</li>
+			<li class="list card">
+				<router-link to="/scoring" class="link">Scoring</router-link>
+			</li>
+			<li class="list card">
+				<router-link to="/ordini" class="link">Ordini in corso</router-link>
+			</li>
+			<li class="list card">
+				<router-link to="/contratti" class="link">Gestione contratti</router-link>
+			</li>
+			<li class="list card">
+				<router-link to="/modulistica" class="link">Modulistica</router-link>
+			</li>
+			<li class="list card">
+				<router-link to="/comunicazioni" class="link">Comunicazioni</router-link>
+			</li>
+			<li class="list card">
+				<router-link to="/note" class="link">Note</router-link>
+			</li>
 		</ul>
-		<router-link to="/automobili">Automobili</router-link>
 	</div>
 </template>
 
