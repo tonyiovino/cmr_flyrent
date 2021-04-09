@@ -1,5 +1,5 @@
 <template>
-	<ul class="list" :class="{ 'list--horizontal': horizontalStyle }">
+	<ul class="list" :class="{ 'list--horizontal': horizontalStyle, 'list--grid': gridStyle }">
 		<li v-for="item in items" :key="item.id">
 			<component
 				:is="itemType"
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-	props: [ 'items', 'itemType', 'horizontalStyle' ],
+	props: [ 'items', 'itemType', 'horizontalStyle', 'gridStyle' ],
 
 	methods: {
 		itemClicked (itemId){

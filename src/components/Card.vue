@@ -1,10 +1,11 @@
 <template>
-	<div class="card">
-		<!-- <img> -->
+	<div class="card" @click="$router.push(data.path)">
+		<div class="card__header">
+			<img :src="'https://picsum.photos/id/'+ data.id + '/200/100'">
+		</div>
 		<div class="card__body">
-			<h5 class="card__title">{{ data.title }}</h5>
-			<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-			<router-link :to="data.path" class="btn card__btn">Apri</router-link>
+			<span class="card__body--title">{{ data.title }}</span>
+			<span class="card__body--text" v-if="data.text">{{ data.text }}</span>
 		</div>
 	</div>
 </template>

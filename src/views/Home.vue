@@ -1,7 +1,7 @@
 <template>
-	<div class="home">
+	<div class="home page">
 		<app-list
-			:horizontalStyle="true"
+			:gridStyle="true"
 			:items="pages"
 			:itemType="itemType"
 		></app-list>
