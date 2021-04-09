@@ -120,11 +120,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  .list li:not(:last-child) {
+    margin-bottom: 2rem; }
   .list--horizontal {
     flex-direction: row;
     flex-wrap: wrap; }
+    .list--horizontal li:not(:last-child) {
+      margin-bottom: 0; }
   .list--grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     align-items: center; }
+    .list--grid li:not(:last-child) {
+      margin-bottom: 0; }
+
+.vehicle {
+  background-color: #8d0df5;
+  padding: 1rem 2rem;
+  font-size: 2rem; }

@@ -33,12 +33,5 @@ export default {
 	components: {
 		appList: List,
 	}
-
-
-// 	methods: {
-// 		automobileClicked (automobileId) {
-// 			alert('Click su automobile id' + automobileId)
-// 		}
-// 	},
 }
 </script>
