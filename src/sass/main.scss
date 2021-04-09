@@ -10,6 +10,8 @@ $color-black: #333;
 $color-white: #eee;
 $color-grey: #777;
 
+$shadow-color: #00000033;
+
 *,
 *::before,
 *::after {
@@ -29,29 +31,58 @@ body {
 	line-height: 1.7;
 	color: $color-black;
 	padding: 3rem;
-
+	
 	box-sizing: border-box;
 }
 
 #app {
 	height: 95vh;
 	background-image: linear-gradient(to bottom right, $color-primary-light, $color-secondary-light);
-
+	
 	position: relative;
-
+	
 	&__nav {
-		font-size: 3rem;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		margin: auto;
+		padding: 3rem;
+		width: 60vw;
+		border-bottom: solid $color-black 0.25rem;
 	}
 }
 
+.view {
+	background-color: rgba($color-black, .6);
+	color: $color-white;
+	font-size: 4rem;
+	font-weight: 600;
+	border-radius: .5rem;
+	width: 20vw;
+	text-align: center;
+	text-decoration: none;
+	
+	&:hover {
+		background-color: rgba($color-white, .6);
+		color: $color-black;
+		box-shadow: 0 1rem 2rem $shadow-color;
+	}
+	
+	&:active {
+		box-shadow: 0 .5rem 1rem $shadow-color;
+	}
+
+	animation: moveInTop 1s ease-out;
+}
+
 .cards-box {
+	margin-top: 10rem;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly; // modificare
 	padding: 5rem;
+	
+	animation: moveInBottom 1s ease-out;
 }
 
 
@@ -71,23 +102,87 @@ body {
 	
 	&__title {
 		font-size: 1.6rem;
-		font-weight: 900;
+		font-weight: 600;
 		margin-bottom: .5rem;
 		padding: 1.2rem;
-	}
 
+		animation: moveInRight 1s ease-out;
+	}
+	
 	&__btn {
-		font-size: 1.4rem;
 		background-color: rgba($color-white, .8);
-		border-radius: 2rem; //modificare
+		color: $color-black;
+		font-size: 1.4rem;
+		font-weight: 800;
+		border-radius: 2rem;
+		width: 6rem;
 
 		&:hover {
-			background-color: $color-white;
+			background-color: rgba($color-black, .8);
+			color: rgba($color-white, .8);
+			box-shadow: 0 1rem 2rem $shadow-color;
 		}
+		&:active {
+			transform: translateY(1px);
+			box-shadow: 0 .5rem 1rem $shadow-color;
+		}
+
+		animation: moveInLeft 1s ease-out;
 	}
 }
 
-.link {
-	text-decoration: none;
-	color: $color-black;
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
+
+	80% {
+		transform: translateX(1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10rem);
+	}
+
+	80% {
+		transform: translateX(-1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes moveInTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-10rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(10rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

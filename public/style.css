@@ -21,20 +21,42 @@ body {
   background-image: linear-gradient(to bottom right, #577cf3, #bc73f8);
   position: relative; }
   #app__nav {
-    font-size: 3rem;
     display: flex;
     flex-direction: row;
-    justify-content: center; }
+    justify-content: center;
+    margin: auto;
+    padding: 3rem;
+    width: 60vw;
+    border-bottom: solid #333 0.25rem; }
+
+.view {
+  background-color: rgba(51, 51, 51, 0.6);
+  color: #eee;
+  font-size: 4rem;
+  font-weight: 600;
+  border-radius: .5rem;
+  width: 20vw;
+  text-align: center;
+  text-decoration: none;
+  animation: moveInTop 1s ease-out; }
+  .view:hover {
+    background-color: rgba(238, 238, 238, 0.6);
+    color: #333;
+    box-shadow: 0 1rem 2rem #00000033; }
+  .view:active {
+    box-shadow: 0 0.5rem 1rem #00000033; }
 
 .cards-box {
+  margin-top: 10rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 5rem; }
+  padding: 5rem;
+  animation: moveInBottom 1s ease-out; }
 
 .card {
   background-color: rgba(51, 51, 51, 0.6);
-  color: #777;
+  color: #eee;
   margin: 2rem;
   text-align: center;
   width: 20rem;
@@ -45,16 +67,58 @@ body {
     padding: 1rem 1rem; }
   .card__title {
     font-size: 1.6rem;
-    font-weight: 900;
+    font-weight: 600;
     margin-bottom: .5rem;
-    padding: 1.2rem; }
+    padding: 1.2rem;
+    animation: moveInRight 1s ease-out; }
   .card__btn {
-    font-size: 1.4rem;
     background-color: rgba(238, 238, 238, 0.8);
-    border-radius: 5rem; }
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border-radius: 2rem;
+    width: 6rem;
+    animation: moveInLeft 1s ease-out; }
     .card__btn:hover {
-      background-color: #eee; }
+      background-color: rgba(51, 51, 51, 0.8);
+      color: rgba(238, 238, 238, 0.8);
+      box-shadow: 0 1rem 2rem #00000033; }
+    .card__btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 0.5rem 1rem #00000033; }
 
-.link {
-  text-decoration: none;
-  color: #333; }
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
