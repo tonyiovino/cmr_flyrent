@@ -1,16 +1,15 @@
 <template>
-	<div class="home">
-		<app-lista
-			component_box="cards-box"
+	<div class="home page">
+		<app-list
+			:gridStyle="true"
 			:items="pages"
 			:itemType="itemType"
-		></app-lista>
+		></app-list>
 	</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Lista from '@/components/Lista.vue'
+import List from '@/components/List.vue'
 import Card from '@/components/Card.vue'
 
 import { mapGetters } from 'vuex'
@@ -32,7 +31,7 @@ export default {
 	},
 
 	components: {
-		appLista: Lista,
+		appList: List,
 	}
 
 

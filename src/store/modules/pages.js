@@ -8,6 +8,7 @@ const state = {
 		{ id: 6, title: 'Modulistica', path: '/modulistica' },
 		{ id: 7, title: 'Comunicazioni', path: '/comunicazioni' },
 		{ id: 8, title: 'Note', path: '/note' },
+		{ id: 9, title: 'Gestione veicoli', text: 'some text', path: '/vehicles' }
 	]
 }
 
