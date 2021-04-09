@@ -1,40 +1,71 @@
 <template>
 	<div class="home">
-		<ul class="unorder-list">
-			<li class="list card">
-				<router-link to="/anagrafica" class="link">Gestione anagrafica</router-link>
-			</li>
-			<li class="list card">
-				<router-link to="/preventivi" class="link">Preventivi</router-link>
-			</li>
-			<li class="list card">
-				<router-link to="/scoring" class="link">Scoring</router-link>
-			</li>
-			<li class="list card">
-				<router-link to="/ordini" class="link">Ordini in corso</router-link>
-			</li>
-			<li class="list card">
-				<router-link to="/contratti" class="link">Gestione contratti</router-link>
-			</li>
-			<li class="list card">
-				<router-link to="/modulistica" class="link">Modulistica</router-link>
-			</li>
-			<li class="list card">
-				<router-link to="/comunicazioni" class="link">Comunicazioni</router-link>
-			</li>
-			<li class="list card">
-				<router-link to="/note" class="link">Note</router-link>
-			</li>
-		</ul>
+		<div class="cards-box">
+			<app-lista
+				:items="pages"
+				:itemType="itemType"
+			></app-lista>
+			<!-- <app-card
+				title="Scoring"
+				link="/scoring"
+			></app-card>
+			<app-card
+				title="Ordini in corso"
+				link="/ordini"
+			></app-card>
+			<app-card
+				title="Gestione contratti"
+				link="/contratti"
+			></app-card>
+
+			<app-card
+				title="Modulistica"
+				link="/modulistica"
+			></app-card>
+			<app-card
+				title="Comunicazioni"
+				link="/comunicazioni"
+			></app-card>
+			<app-card
+				title="Note"
+				link="/note"
+			></app-card>	-->
+		</div>
 	</div>
 </template>
 
 <script>
 // @ is an alias to /src
+import Lista from '@/components/Lista.vue'
+import Card from '@/components/Card.vue'
+
+import { mapGetters } from 'vuex'
 
 export default {
+
 	name: 'Home',
+
+	data() {
+		return {
+			itemType: Card
+		}
+	},
+
+	computed: {
+		...mapGetters([
+			'pages'
+		])
+	},
+
 	components: {
+		appLista: Lista,
 	}
+
+
+// 	methods: {
+// 		automobileClicked (automobileId) {
+// 			alert('Click su automobile id' + automobileId)
+// 		}
+// 	},
 }
 </script>

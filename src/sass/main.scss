@@ -34,12 +34,10 @@ body {
 }
 
 #app {
-    height: 95vh;
-    background-image: linear-gradient(to bottom right, $color-primary-light, $color-secondary-light);
-    background-size: cover;
-    background-position: center;
+	height: 95vh;
+	background-image: linear-gradient(to bottom right, $color-primary-light, $color-secondary-light);
 
-    position: relative;
+	position: relative;
 
 	&__nav {
 		font-size: 3rem;
@@ -49,18 +47,47 @@ body {
 	}
 }
 
-.unorder-list {
-	font-size: 2rem;
-	display: contents;
-	flex-direction: row;
-	justify-content: space-around;
+.cards-box {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly; // modificare
+	padding: 5rem;
+}
+
+
+.card {
+	background-color: rgba($color-black, .6);
+	color: $color-white; // da revisionare
+	margin: 2rem;
+	text-align: center;
+	width: 20rem;
+	height: 10rem;
+	border-radius: .5rem;
+	
+	&__body {
+		flex: 1 1 auto;
+		padding: 1rem 1rem;
+	}
+	
+	&__title {
+		font-size: 1.6rem;
+		font-weight: 900;
+		margin-bottom: .5rem;
+		padding: 1.2rem;
+	}
+
+	&__btn {
+		font-size: 1.4rem;
+		background-color: rgba($color-white, .8);
+		border-radius: 2rem; //modificare
+
+		&:hover {
+			background-color: $color-white;
+		}
+	}
 }
 
 .link {
 	text-decoration: none;
 	color: $color-black;
-}
-
-.list {
-	list-style: none;
 }

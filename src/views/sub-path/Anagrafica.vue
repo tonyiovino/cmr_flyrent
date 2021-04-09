@@ -1,12 +1,6 @@
 <template>
 	<div class="anagrafica">
-		<h1>Gestione Anagrafica</h1>
-
-		<!-- <app-lista
-			:items="automobili"
-			:itemType="itemType"
-			@item-clicked="automobileClicked"
-		></app-lista> -->
+		<h1>Gestione anagrafica</h1>
 	</div>
 </template>
 
