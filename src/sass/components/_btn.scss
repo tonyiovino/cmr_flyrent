@@ -17,11 +17,11 @@
 	&:hover {
 		background-color: rgba($color-white, .6);
 		color: $color-black;
-		box-shadow: 0 1rem 2rem $shadow-color;
+		box-shadow: 0 1rem 2rem rgba($color-black, .8);
 	}
 	
 	&:active {
-		box-shadow: 0 .5rem 1rem $shadow-color;
+		box-shadow: 0 .5rem 1rem rgba($color-black, .8);
 	}
 
 	animation: moveInTop 1s ease-out;

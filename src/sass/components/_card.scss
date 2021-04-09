@@ -30,11 +30,11 @@
 		&:hover {
 			background-color: rgba($color-black, .8);
 			color: rgba($color-white, .8);
-			box-shadow: 0 1rem 2rem $shadow-color;
+			box-shadow: 0 1rem 2rem rgba($color-black, .8);
 		}
 		&:active {
 			transform: translateY(1px);
-			box-shadow: 0 .5rem 1rem $shadow-color;
+			box-shadow: 0 .5rem 1rem rgba($color-black, .8);
 		}
 
 		animation: moveInLeft 1s ease-out;
