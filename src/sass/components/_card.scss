@@ -1,0 +1,42 @@
+.card {
+	background-color: rgba($color-black, .6);
+	color: $color-white; // da revisionare
+	margin: 2rem;
+	text-align: center;
+	width: 20rem;
+	height: 10rem;
+	border-radius: 2px;
+	
+	&__body {
+		flex: 1 1 auto;
+		padding: 1rem 1rem;
+	}
+	
+	&__title {
+		font-size: 1.6rem;
+		font-weight: 900;
+		margin-bottom: .5rem;
+		padding: 1.2rem;
+	}
+
+	&__btn {
+		background-color: rgba($color-white, .8);
+		color: $color-black;
+		font-size: 1.4rem;
+		font-weight: 800;
+		border-radius: 2rem;
+		width: 6rem;
+
+		&:hover {
+			background-color: rgba($color-black, .8);
+			color: rgba($color-white, .8);
+			box-shadow: 0 1rem 2rem $shadow-color;
+		}
+		&:active {
+			transform: translateY(1px);
+			box-shadow: 0 .5rem 1rem $shadow-color;
+		}
+
+		animation: moveInLeft 1s ease-out;
+	}
+}

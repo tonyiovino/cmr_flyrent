@@ -1,0 +1,28 @@
+.link {
+	text-decoration: none;
+	color: $color-black;
+    font-size: 2rem;
+}
+
+.btn {
+	background-color: rgba($color-black, .6);
+	color: $color-white;
+	font-size: 4rem;
+	font-weight: 600;
+	border-radius: .5rem;
+	width: 20vw;
+	text-align: center;
+	text-decoration: none;
+	
+	&:hover {
+		background-color: rgba($color-white, .6);
+		color: $color-black;
+		box-shadow: 0 1rem 2rem $shadow-color;
+	}
+	
+	&:active {
+		box-shadow: 0 .5rem 1rem $shadow-color;
+	}
+
+	animation: moveInTop 1s ease-out;
+}
