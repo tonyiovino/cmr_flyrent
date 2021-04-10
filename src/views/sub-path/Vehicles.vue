@@ -1,5 +1,9 @@
 <template>
     <div class="vehicles page">
+        <app-input-vehicle
+            @save="vehicleSave"
+        ></app-input-vehicle>
+
         <app-list
             :items="vehicles"
             :itemType="itemType"
@@ -11,7 +15,8 @@
 
 <script>
 import List from '@/components/List.vue'
-import Vehicle from '@/components/Vehicle.vue'
+import Vehicle from '@/components/Vehicles/Vehicle.vue'
+import InputVehicle from '@/components/Vehicles/InputVehicle.vue'
 
 import { mapGetters, mapActions } from 'vuex'
 
@@ -30,7 +35,7 @@ export default {
 
     methods: {
         ...mapActions([
-            'deleteVehicle'
+            'deleteVehicle', 'addVehicle'
         ]),
 
         vehicleClicked (vehicleId) {
@@ -39,11 +44,16 @@ export default {
 
         vehicleDelete (vehicleId) {
             this.deleteVehicle(vehicleId)
+        },
+
+        vehicleSave (vehicle) {
+            this.addVehicle(vehicle)
         }
     },
 
     components: {
-        appList: List
+        appList: List,
+        appInputVehicle: InputVehicle
     }
 }
 </script>
