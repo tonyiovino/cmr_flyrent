@@ -80,20 +80,23 @@ body {
   font-size: 2rem; }
 
 .btn {
-  background-color: rgba(51, 51, 51, 0.6);
+  background-color: #090857;
+  border: none;
   color: #fefefe;
-  font-size: 4rem;
-  font-weight: 600;
-  border-radius: .5rem;
-  width: 20vw;
-  text-align: center;
-  text-decoration: none; }
+  font-size: 3rem;
+  border-radius: 3px;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  margin: 1rem; }
   .btn:hover {
-    background-color: rgba(254, 254, 254, 0.6);
-    color: #333;
+    background-color: #0d43f5;
     box-shadow: 0 1rem 2rem rgba(51, 51, 51, 0.8); }
   .btn:active {
     box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.8); }
+  .btn--flat {
+    background-color: transparent;
+    margin-top: 0;
+    margin-bottom: 0; }
 
 .card {
   background: rgba(254, 254, 254, 0.6);
@@ -104,9 +107,12 @@ body {
   padding-bottom: 1rem;
   min-height: 20vh;
   cursor: pointer; }
+<<<<<<< HEAD
   .card:hover {
     color: #fefefe;
     background-color: rgba(51, 51, 51, 0.6); }
+=======
+>>>>>>> 4e0440d (.)
   .card__header {
     margin-bottom: 1rem; }
     .card__header img {
@@ -200,13 +206,17 @@ body {
 .vehicle {
   background-color: #2a0449;
   color: #fefefe;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem 1rem 2rem;
   font-size: 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-radius: 2px; }
   .vehicle__actions {
-    color: #bc73f8; }
+    color: #bc73f8;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch; }
 
 .input {
   background-color: rgba(87, 124, 243, 0.6);
