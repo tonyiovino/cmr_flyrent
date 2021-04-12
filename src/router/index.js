@@ -12,6 +12,7 @@ import Modulistica from '../views/sub-path/Modulistica.vue'
 import Comunicazioni from '../views/sub-path/Comunicazioni.vue'
 import Note from '../views/sub-path/Note.vue'
 import Vehicles from '../views/sub-path/Vehicles.vue'
+import EditVehicle from '../views/sub-path/EditVehicle.vue'
 
 Vue.use(VueRouter)
 
@@ -65,6 +66,11 @@ const routes = [
 		path: '/vehicles',
 		name: 'Vehicles',
 		component: Vehicles
+	},
+	{
+		path: '/vehicles/:id',
+		name: 'EditVehicle',
+		component: EditVehicle
 	},
 	// {
 	// 	path: '/about',

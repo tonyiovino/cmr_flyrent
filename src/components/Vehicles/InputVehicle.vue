@@ -1,6 +1,7 @@
 <template>
     <div class="input">
-        <h2 class="heading-secondary">Nuovo Veicolo</h2>
+        <h2 class="heading-secondary" v-if="id">Modifica Veicolo</h2>
+        <h2 class="heading-secondary" v-else>Nuovo Veicolo</h2>
 
         <form class="form" @submit.prevent="submit">
             <div class="form__group">
@@ -19,14 +20,24 @@
             </div>
 
             <div class="form__actions">
-                <button class="btn btn--primary">Salva</button>
+                <button type="submit" class="btn btn--primary">Salva</button>
             </div>
         </form>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+    props: [ 'id' ],
+
+    computed: {
+        ...mapGetters([
+            'vehicleById'
+        ])
+    },
+
     data () {
         return {
             brand: '',
@@ -40,11 +51,21 @@ export default {
             if (this.brand === '' || this.model === '' || this.license_plate === '') return
 
             this.$emit('save', {
+                id: this.id,
                 brand: this.brand,
                 model: this.model,
                 license_plate: this.license_plate
             })
             this.brand = this.model = this.license_plate = ''
+        }
+    },
+
+    created () {
+        if (this.id) {
+            const vehicle = this.vehicleById(this.id)
+            this.brand = vehicle.brand
+            this.model = vehicle.model
+            this.license_plate = vehicle.license_plate
         }
     }
 }

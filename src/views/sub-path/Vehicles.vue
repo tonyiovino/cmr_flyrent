@@ -34,7 +34,7 @@ export default {
 		]),
 
 		vehicleClicked (vehicleId) {
-			alert('Click su automobile id ' + vehicleId)
+			this.$router.push('/vehicles/' + vehicleId)
 		},
 
 		vehicleDelete (vehicleId) {
