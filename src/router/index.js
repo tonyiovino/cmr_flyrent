@@ -11,7 +11,7 @@ import Contratti from '../views/sub-path/Contratti.vue'
 import Modulistica from '../views/sub-path/Modulistica.vue'
 import Comunicazioni from '../views/sub-path/Comunicazioni.vue'
 import Note from '../views/sub-path/Note.vue'
-import Automobili from '../views/sub-path/Automobili.vue'
+import Vehicles from '../views/sub-path/Vehicles.vue'
 
 Vue.use(VueRouter)
 
@@ -63,8 +63,8 @@ const routes = [
 	},
 	{
 		path: '/vehicles',
-		name: 'Automobili',
-		component: Automobili
+		name: 'Vehicles',
+		component: Vehicles
 	},
 	// {
 	// 	path: '/about',

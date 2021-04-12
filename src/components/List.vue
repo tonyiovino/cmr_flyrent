@@ -5,6 +5,7 @@
 				:is="itemType"
 				:data="item"
 				@clicked="itemClicked"
+				@action1="action1"
 			></component>
 		</li>
 	</ul>
@@ -17,6 +18,10 @@ export default {
 	methods: {
 		itemClicked (itemId){
 			this.$emit('item-clicked', itemId)
+		},
+
+		action1 (itemId) {
+			this.$emit('action1', itemId)
 		}
 	}
 }

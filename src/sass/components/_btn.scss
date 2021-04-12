@@ -5,18 +5,17 @@
 }
 
 .btn {
-	background-color: rgba($color-black, .6);
+	background-color: $color-primary-dark;
+	border: none;
 	color: $color-white;
-	font-size: 4rem;
-	font-weight: 600;
-	border-radius: .5rem;
-	width: 20vw;
-	text-align: center;
-	text-decoration: none;
+	font-size: 3rem;
+	border-radius: 3px;
+	padding: 1rem 3rem;
+	cursor: pointer;
+	margin: 1rem;
 	
 	&:hover {
-		background-color: rgba($color-white, .6);
-		color: $color-black;
+		background-color: $color-primary;
 		box-shadow: 0 1rem 2rem rgba($color-black, .8);
 	}
 	
@@ -24,5 +23,9 @@
 		box-shadow: 0 .5rem 1rem rgba($color-black, .8);
 	}
 
-	animation: moveInTop 1s ease-out;
+	&--flat {
+		background-color: transparent;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 }
