@@ -1,6 +1,6 @@
 <template>
 	<div class="automobile" @click="$emit('clicked', data.id)">
-		{{ data.marca }} - {{ data.modello }} - {{ data.targa }}
+		{{ data.brand }} - {{ data.model }} - {{ data.license_plate }}
 	</div>
 </template>
 
