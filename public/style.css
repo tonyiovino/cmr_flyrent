@@ -107,12 +107,9 @@ body {
   padding-bottom: 1rem;
   min-height: 20vh;
   cursor: pointer; }
-<<<<<<< HEAD
   .card:hover {
     color: #fefefe;
     background-color: rgba(51, 51, 51, 0.6); }
-=======
->>>>>>> 4e0440d (.)
   .card__header {
     margin-bottom: 1rem; }
     .card__header img {
@@ -186,22 +183,16 @@ body {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: stretch; }
-  .list li:not(:last-child) {
-    margin-bottom: 2rem; }
   .list--horizontal {
     flex-direction: row;
     flex-wrap: wrap; }
-    .list--horizontal li:not(:last-child) {
-      margin-bottom: 0; }
   .list--grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     align-items: center; }
-    .list--grid li:not(:last-child) {
-      margin-bottom: 0; }
 
 .vehicle {
   background-color: #2a0449;
@@ -211,7 +202,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 2px; }
+  border-radius: 2px;
+  margin-bottom: 1rem; }
   .vehicle__actions {
     color: #bc73f8;
     display: flex;

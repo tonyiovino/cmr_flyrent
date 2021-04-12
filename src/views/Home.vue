@@ -1,10 +1,12 @@
 <template>
 	<div class="home page">
-		<app-list
-			:gridStyle="true"
-			:items="pages"
-			:itemType="itemType"
-		></app-list>
+		<app-list className="list--grid">
+			<app-card
+				v-for="page in pages"
+				:key="page.id"
+				:data="page"
+			></app-card>
+		</app-list>
 	</div>
 </template>
 
@@ -15,14 +17,7 @@ import Card from '@/components/Card.vue'
 import { mapGetters } from 'vuex'
 
 export default {
-
 	name: 'Home',
-
-	data() {
-		return {
-			itemType: Card,
-		}
-	},
 
 	computed: {
 		...mapGetters([
@@ -32,6 +27,7 @@ export default {
 
 	components: {
 		appList: List,
+		appCard: Card
 	}
 }
 </script>

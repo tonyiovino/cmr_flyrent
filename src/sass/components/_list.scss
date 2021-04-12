@@ -2,20 +2,12 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: stretch;
-
-    li:not(:last-child) {
-        margin-bottom: 2rem;
-    }
 
     &--horizontal {
         flex-direction: row;
         flex-wrap: wrap;
-
-        li:not(:last-child) {
-            margin-bottom: 0;
-        }
     }
 
     &--grid {
@@ -23,11 +15,5 @@
         grid-template-columns: repeat(4, 1fr);
         justify-items: center;
         align-items: center;
-
-        li:not(:last-child) {
-            margin-bottom: 0;
-        }
     }
-
-    
 }
