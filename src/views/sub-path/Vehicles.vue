@@ -30,7 +30,7 @@ export default {
 
 	methods: {
 		...mapActions([
-			'deleteVehicle', 'addVehicle'
+			'deleteVehicle', 'addVehicle', 'inc'
 		]),
 
 		vehicleClicked (vehicleId) {

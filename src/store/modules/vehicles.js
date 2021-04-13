@@ -37,7 +37,8 @@ const mutations = {
 
 const actions = {
 	addVehicle (state, payload) {
-		payload.id = state.nextId
+		payload.id = "" + state.nextId
+		console.log(payload)
 		state.commit('incrNextId')
 		state.commit('addVehicle', payload)
 	},
