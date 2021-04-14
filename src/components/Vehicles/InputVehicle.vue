@@ -20,8 +20,8 @@
 			</div>
 
 			<div class="form__actions">
-				<button type="submit" class="btn btn--save" value="save">Salva</button>
-				<button type="submit" class="btn btn--cancel" value="cancel">Annulla</button>
+				<button type="submit" class="btn btn--save">Salva</button>
+				<button type="submit" class="btn btn--cancel" @click="$router.push('/vehicles')">Annulla</button>
 			</div>
 		</form>
 	</div>
@@ -51,17 +51,13 @@ export default {
 		submit () {
 			if (this.brand === '' || this.model === '' || this.license_plate === '') return
 
-			// if (this.value == 'save') {
-				this.$emit('save', {
-					id: this.id,
-					brand: this.brand,
-					model: this.model,
-					license_plate: this.license_plate
-				})
-			// } else {
-			// 	this.$emit('cancel', this.id)
-			// 	this.$router.push('/vehicles')
-			// }
+			this.$emit('save', {
+				id: this.id,
+				brand: this.brand,
+				model: this.model,
+				license_plate: this.license_plate
+			})
+			
 			this.brand = this.model = this.license_plate = ''
 		}
 	},
