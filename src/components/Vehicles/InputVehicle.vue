@@ -21,7 +21,9 @@
 
 			<div class="form__actions">
 				<button type="submit" class="btn btn--save">Salva</button>
-				<button type="submit" class="btn btn--cancel" @click="$router.push('/vehicles')">Annulla</button>
+			
+				<button type="submit" class="btn btn--cancel" v-if="id" @click="$router.push('/vehicles')">Annulla</button>
+				<button type="submit" class="btn btn--cancel" v-else @click="brand = model = license_plate = ''">Annulla</button>
 			</div>
 		</form>
 	</div>

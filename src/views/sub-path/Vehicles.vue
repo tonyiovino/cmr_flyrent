@@ -43,7 +43,7 @@ export default {
 
 		vehicleSave (vehicle) {
 			this.addVehicle(vehicle)
-		}
+		},
 	},
 
 	components: {

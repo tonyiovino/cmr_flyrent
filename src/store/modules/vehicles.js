@@ -48,8 +48,7 @@ const actions = {
 
 	deleteVehicle (context, payload) {
 		context.commit('deleteVehicle', payload)
-	}
-
+	},
 }
 
 export default {
