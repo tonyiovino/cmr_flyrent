@@ -36,19 +36,18 @@ const mutations = {
 }
 
 const actions = {
-	addVehicle (state, payload) {
-		payload.id = "" + state.nextId
-		console.log(payload)
-		state.commit('incrNextId')
-		state.commit('addVehicle', payload)
+	addVehicle (context, payload) {
+		payload.id = "" + context.state.nextId
+		context.commit('incrNextId')
+		context.commit('addVehicle', payload)
 	},
 
-	editVehicle (state, payload) {
-		state.commit('editVehicle', payload)
+	editVehicle (context, payload) {
+		context.commit('editVehicle', payload)
 	},
 
-	deleteVehicle (state, payload) {
-		state.commit('deleteVehicle', payload)
+	deleteVehicle (context, payload) {
+		context.commit('deleteVehicle', payload)
 	}
 
 }
