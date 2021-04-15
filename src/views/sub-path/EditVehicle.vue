@@ -1,10 +1,10 @@
 <template>
-    <div class="vehicles page">
+    <app-page>
 		<app-input-vehicle
 			:id="$route.params.id"
 			@save="vehicleSave"
 		></app-input-vehicle>
-	</div>
+	</app-page>
 </template>
 
 <script>

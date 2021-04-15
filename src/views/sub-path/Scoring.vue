@@ -1,5 +1,5 @@
 <template>
-	<div class="scoring">
+	<app-page>
 		<h1>Scoring</h1>
-	</div>
+	</app-page>
 </template>

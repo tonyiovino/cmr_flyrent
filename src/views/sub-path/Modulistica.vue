@@ -1,5 +1,5 @@
 <template>
-	<div class="modulistica">
+	<app-page>
 		<h1>Modulistica</h1>
-	</div>
+	</app-page>
 </template>

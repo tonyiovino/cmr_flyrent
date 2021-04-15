@@ -1,5 +1,5 @@
 <template>
-	<div class="comunicazioni">
+	<app-page>
 		<h1>Comunicazioni</h1>
-	</div>
+	</app-page>
 </template>

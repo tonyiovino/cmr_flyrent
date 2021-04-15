@@ -8,3 +8,29 @@
 		<router-view/>
 	</div>
 </template>
+
+<style lang="scss">
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+#app {
+	min-height: 95vh;
+	background: linear-gradient(to bottom right, $color-primary-light, $color-secondary-light);
+
+	position: relative;
+}
+</style>

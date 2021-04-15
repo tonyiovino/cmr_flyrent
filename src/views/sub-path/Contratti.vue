@@ -1,5 +1,5 @@
 <template>
-	<div class="contratti">
+	<app-page>
 		<h1>Gestione contratti</h1>
-	</div>
+	</app-page>
 </template>

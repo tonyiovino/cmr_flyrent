@@ -3,7 +3,7 @@
 		<h2 class="heading-secondary" v-if="id">Modifica Veicolo</h2>
 		<h2 class="heading-secondary" v-else>Nuovo Veicolo</h2>
 
-		<form class="form" @submit.prevent="submit">
+		<app-form @submit="submit">
 			<div class="form__group">
 				<input type="text" class="form__input" id="brand" v-model.trim="brand" placeholder="Marca" required>
 				<label for="brand" class="form__label">Marca</label>
@@ -25,7 +25,7 @@
 				<button type="submit" class="btn btn--cancel" v-if="id" @click="$router.push('/vehicles')">Annulla</button>
 				<button type="submit" class="btn btn--cancel" v-else @click="brand = model = license_plate = ''">Annulla</button>
 			</div>
-		</form>
+		</app-form>
 	</div>
 </template>
 

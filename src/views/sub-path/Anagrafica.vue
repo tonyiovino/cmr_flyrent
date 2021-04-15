@@ -1,7 +1,7 @@
 <template>
-	<div class="anagrafica">
+	<app-page>
 		<h1>Gestione anagrafica</h1>
-	</div>
+	</app-page>
 </template>
 
 <script>

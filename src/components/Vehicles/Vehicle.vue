@@ -12,3 +12,28 @@ export default {
 	props: [ 'data' ]
 }
 </script>
+
+<style lang="scss">
+.vehicle {
+    background-color: $color-secondary-dark;
+    color: $color-white;
+    padding: 1rem 1rem 1rem 2rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+
+    &__data {
+
+    }
+
+    &__actions {
+        color: $color-secondary-light;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="preventivi">
+	<app-page>
 		<h1>Preventivi</h1>
-	</div>
+	</app-page>
 </template>

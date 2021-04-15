@@ -1,5 +1,5 @@
 <template>
-	<div class="ordini">
+	<app-page>
 		<h1>Ordini in corso</h1>
-	</div>
+	</app-page>
 </template>
