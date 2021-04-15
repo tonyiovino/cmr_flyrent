@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueResource from 'vue-resource'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -11,6 +12,8 @@ import Btn from './components/UI/Btn'
 import TextLink from './components/UI/TextLink'
 
 Vue.config.productionTip = false
+
+Vue.use(VueResource)
 
 Vue.component('appPage', Page)
 Vue.component('appList', List)
