@@ -1,15 +1,22 @@
-.link {
-	text-decoration: none;
-	color: $color-black;
-    font-size: 2rem;
-}
+<template>
+    <button class="btn" :class="className">
+        <slot></slot>
+    </button>
+</template>
 
+<script>
+export default {
+    props: [ 'className' ]
+}
+</script>
+
+<style lang="scss">
 .btn {
 	background-color: $color-primary-dark;
 	border: none;
 	color: $color-white;
 	font-size: 3rem;
-	border-radius: 3px;
+	border-radius: 10rem;
 	padding: 1rem 3rem;
 	cursor: pointer;
 	margin: 1rem;
@@ -28,4 +35,13 @@
 		margin-top: 0;
 		margin-bottom: 0;
 	}
+
+    &--primary {
+        background-color: $color-primary-dark;
+    }
+
+    &--secondary {
+        background-color: $color-secondary;
+    }
 }
+</style>

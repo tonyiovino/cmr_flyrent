@@ -20,12 +20,13 @@
 			</div>
 
 			<div class="form__actions">
-				<button type="submit" class="btn btn--save">Salva</button>
-			
-				<button type="submit" class="btn btn--cancel" v-if="id" @click="$router.push('/vehicles')">Annulla</button>
-				<button type="submit" class="btn btn--cancel" v-else @click="brand = model = license_plate = ''">Annulla</button>
+				<app-btn class="btn--primary" type="submit">Salva</app-btn>
+
+				<app-text-link v-if="id" path="/vehicles">Annulla</app-text-link>
+				<app-btn class="btn--secondary" v-else type="reset">Pulisci</app-btn>
 			</div>
 		</app-form>
+
 	</div>
 </template>
 
