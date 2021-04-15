@@ -1,12 +1,12 @@
+import Vue from 'vue'
+
 const state = {
 	// fake data, must be loaded from db
 	//  - remember to add `loaded` state
 	vehicles: [
 		{ id: '1', license_plate: 'AB 123 CD', brand: 'Ferrari', model: 'F40' },
 		{ id: '2', license_plate: 'XY 000 ZZ', brand: 'Porsche', model: 'Carrera' },
-	],
-
-	nextId: 3
+	]
 }
 
 const getters = {
@@ -28,18 +28,23 @@ const mutations = {
 	
 	deleteVehicle: (state, payload) => {
 		state.vehicles = state.vehicles.filter(vehicle => vehicle.id !== payload)
-	},
-
-	incrNextId (state) {
-		state.nextId++
 	}
 }
 
 const actions = {
-	addVehicle (context, payload) {
-		payload.id = "" + context.state.nextId
-		context.commit('incrNextId')
-		context.commit('addVehicle', payload)
+	addVehicle: ({ commit }, vehicle) => {
+		return new Promise((resolve, reject) => {
+			Vue.http.post('https://cmrflyrent-b50d7-default-rtdb.europe-west1.firebasedatabase.app/vehicles.json', vehicle)
+			.then( response => response.json() )
+			.then( data => {
+				vehicle.id = data.name
+				commit('addVehicle', vehicle)
+				resolve()
+			})
+			.catch( err => {
+				reject(err.body)
+			})
+		})
 	},
 
 	editVehicle (context, payload) {
