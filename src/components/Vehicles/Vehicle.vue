@@ -26,7 +26,7 @@ export default {
     margin-bottom: 1rem;
 
     &__data {
-
+        font-weight: 600;
     }
 
     &__actions {

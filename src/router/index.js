@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import Home from '../views/Home.vue'
 
-import Anagrafica from '../views/sub-path/Anagrafica.vue'
+import Registry from '../views/sub-path/Registry/Registry.vue'
 import Preventivi from '../views/sub-path/Preventivi.vue'
 import Scoring from '../views/sub-path/Scoring.vue'
 import Ordini from '../views/sub-path/Ordini.vue'
@@ -11,8 +11,8 @@ import Contratti from '../views/sub-path/Contratti.vue'
 import Modulistica from '../views/sub-path/Modulistica.vue'
 import Comunicazioni from '../views/sub-path/Comunicazioni.vue'
 import Note from '../views/sub-path/Note.vue'
-import Vehicles from '../views/sub-path/Vehicles.vue'
-import EditVehicle from '../views/sub-path/EditVehicle.vue'
+import Vehicles from '../views/sub-path/Vehicles/Vehicles.vue'
+import EditVehicle from '../views/sub-path/Vehicles/EditVehicle.vue'
 
 Vue.use(VueRouter)
 
@@ -25,7 +25,7 @@ const routes = [
 	{
 		path: '/anagrafica',
 		name: 'Gestione Anagrafica',
-		component: Anagrafica
+		component: Registry
 	},
 	{
 		path: '/preventivi',
