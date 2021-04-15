@@ -1,5 +1,5 @@
 <template>
-	<div class="home page">
+	<app-page>
 		<app-list className="list--grid">
 			<app-card
 				v-for="page in pages"
@@ -7,13 +7,10 @@
 				:data="page"
 			></app-card>
 		</app-list>
-	</div>
+	</app-page>
 </template>
 
 <script>
-import List from '@/components/List.vue'
-import Card from '@/components/Card.vue'
-
 import { mapGetters } from 'vuex'
 
 export default {
@@ -23,11 +20,6 @@ export default {
 		...mapGetters([
 			'pages'
 		])
-	},
-
-	components: {
-		appList: List,
-		appCard: Card
 	}
 }
 </script>

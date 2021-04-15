@@ -1,5 +1,5 @@
 <template>
-	<div class="vehicles page">
+	<app-page>
 		<app-input-vehicle
 			@save="vehicleSave"
 		></app-input-vehicle>
@@ -11,11 +11,10 @@
 				@delete="vehicleDelete"
 			></app-vehicle>
 		</app-list>
-	</div>
+	</app-page>
 </template>
 
 <script>
-import List from '@/components/List.vue'
 import Vehicle from '@/components/Vehicles/Vehicle.vue'
 import InputVehicle from '@/components/Vehicles/InputVehicle.vue'
 
@@ -47,7 +46,6 @@ export default {
 	},
 
 	components: {
-		appList: List,
 		appVehicle: Vehicle,
 		appInputVehicle: InputVehicle
 	}

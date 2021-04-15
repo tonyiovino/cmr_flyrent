@@ -1,6 +1,14 @@
+<template>
+    <form class="form" @submit.prevent="$emit('submit')">
+        <slot></slot>
+    </form>
+</template>
+
+<style lang="scss">
 .form {
     margin-bottom: 1rem;
-    
+    color: $color-white;
+
     &__row {
         display: flex;
         flex-direction: row;
@@ -76,3 +84,4 @@
         width: 100%;
     }
 }
+</style>

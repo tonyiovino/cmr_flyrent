@@ -1,3 +1,16 @@
+<template>
+	<ul class="list" :class="className">
+		<slot></slot>
+	</ul>
+</template>
+
+<script>
+export default {
+	props: [ 'className' ]
+}
+</script>
+
+<style lang="scss">
 .list {
     list-style-type: none;
     display: flex;
@@ -17,3 +30,4 @@
         align-items: center;
     }
 }
+</style>
