@@ -15,25 +15,27 @@ export default {
 
 <style lang="scss">
 .vehicle {
-    background-color: $color-secondary-dark;
-    color: $color-white;
-    padding: 1rem 1rem 1rem 2rem;
-    font-size: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 2px;
-    margin-bottom: 1rem;
+	background-color: $color-secondary-dark;
+	color: $color-white;
+	padding: 1rem 1rem 1rem 2rem;
+	font-size: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 2px;
+	margin-bottom: 1rem;
+	letter-spacing: 0.2rem;
+	word-spacing: 0.7rem;
 
-    &__data {
-        font-weight: 600;
-    }
+	&__data {
+		font-weight: 600;
+	}
 
-    &__actions {
-        color: $color-secondary-light;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: stretch;
-    }
+	&__actions {
+		color: $color-secondary-light;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: stretch;
+	}
 }
 </style>

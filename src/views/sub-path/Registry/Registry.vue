@@ -1,30 +1,50 @@
 <template>
 	<app-page>
-		<h1>Gestione anagrafica</h1>
-		<p>{{ cutomer }}</p>
-		<app-customer>
-		</app-customer>
+		<h2 class="heading-secondary">Gestione anagrafica</h2>
+		<app-input-customer
+			@save="customerSave"
+		></app-input-customer>
+		
+		<app-list>
+			<app-customer v-for="customer in customers" :key="customer.id"
+				:data="customer"
+				@delete="customerDelete"
+			></app-customer>
+		</app-list>
 	</app-page>
 </template>
 
 <script>
 import Customer from '@/components/Registry/Customer.vue'
-// import InputRegistry from '@/components/Registry/InputRegistry.vue'
+import InputCustomer from '@/components/Registry/InputCustomer.vue'
 
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
 	computed: {
 		...mapGetters([
-			'customer'
+			'customers'
 		])
 	},
 
 	methods: {
+		...mapActions([
+			'deleteCustomer', 'addCustomer'
+		]),
+
+		customerDelete (customerId) {
+			this.deleteCustomer(customerId)
+		},
+
+		customerSave (customer) {
+			console.log(customer)
+			this.addCustomer(customer)
+		},
 	},
 
 	components: {
-		appCustomerd: Customer,
+		appCustomer: Customer,
+		appInputCustomer: InputCustomer
 	}
 }
 </script>

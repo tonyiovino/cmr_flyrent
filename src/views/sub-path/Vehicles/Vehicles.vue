@@ -1,5 +1,6 @@
 <template>
 	<app-page>
+		<h2 class="heading-secondary">Gestione veicoli</h2>
 		<app-input-vehicle
 			@save="vehicleSave"
 		></app-input-vehicle>
