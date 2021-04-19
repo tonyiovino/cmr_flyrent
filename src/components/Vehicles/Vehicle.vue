@@ -26,6 +26,7 @@ export default {
 	margin-bottom: 1rem;
 	letter-spacing: 0.2rem;
 	word-spacing: 0.7rem;
+	cursor: pointer;
 
 	&__data {
 		font-weight: 600;
