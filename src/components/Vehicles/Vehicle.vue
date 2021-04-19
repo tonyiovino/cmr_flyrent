@@ -1,6 +1,8 @@
 <template>
 	<div class="vehicle" @click="$emit('clicked', data.id)">
-		<span class="vehicle__data">{{ data.brand }} {{ data.model }} - {{ data.license_plate }}</span>
+		<span class="vehicle__data">
+			{{ data.brand }} {{ data.model }} - {{ data.license_plate }}
+		</span>
 		<span class="vehicle__actions">
 			<app-btn className="btn--flat" @click="$emit('delete', data.id)">&times;</app-btn>
 		</span>
