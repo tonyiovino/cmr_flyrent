@@ -13,6 +13,9 @@ export default new Vuex.Store({
 	mutations: {
 	},
 	actions: {
+		loadInitialData: ({ dispatch }) => {
+			dispatch('loadVehicles')
+		}
 	},
 	modules: {
 		pages,

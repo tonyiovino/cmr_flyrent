@@ -24,7 +24,9 @@ export default {
 
 		vehicleSave (vehicle) {
 			this.editVehicle(vehicle)
-			this.$router.push('/vehicles')
+			.then( () => {
+				this.$router.push('/vehicles')
+			})
 		}
 	}
 }

@@ -1,5 +1,7 @@
 <template>
 	<div id="app">
+		<app-loading-status />
+
 		<div id="app__nav">
 			<app-text-link path="/">Home</app-text-link>
 			<!-- <router-link to="/about" class="btn btn--primary">About</router-link> -->
@@ -8,6 +10,28 @@
 		<router-view/>
 	</div>
 </template>
+
+<script>
+import LoadingStatus from './components/TheLoadingStatus.vue'
+
+import { mapActions } from 'vuex'
+
+export default {
+	methods: {
+		...mapActions([
+			'loadInitialData'
+		])
+	},
+
+	created () {
+		this.loadInitialData()
+	},
+
+	components: {
+		appLoadingStatus: LoadingStatus
+	}
+}
+</script>
 
 <style lang="scss">
 *,
