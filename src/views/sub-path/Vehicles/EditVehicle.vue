@@ -1,5 +1,5 @@
 <template>
-    <app-page>
+	<app-page>
 		<app-input-vehicle
 			:id="$route.params.id"
 			@save="vehicleSave"
@@ -13,7 +13,7 @@ import InputVehicle from '@/components/Vehicles/InputVehicle.vue'
 import { mapActions } from 'vuex'
 
 export default {
-    components: {
+	components: {
 		appInputVehicle: InputVehicle
 	},
 

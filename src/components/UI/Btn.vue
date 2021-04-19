@@ -1,12 +1,12 @@
 <template>
-    <button class="btn" :class="className" @click.stop="$emit('click')">
-        <slot></slot>
-    </button>
+	<button class="btn" :class="className" @click.stop="$emit('click')">
+		<slot></slot>
+	</button>
 </template>
 
 <script>
 export default {
-    props: [ 'className' ]
+	props: [ 'className' ]
 }
 </script>
 
@@ -36,12 +36,12 @@ export default {
 		margin-bottom: 0;
 	}
 
-    &--primary {
-        background-color: $color-primary-dark;
-    }
+	&--primary {
+		background-color: $color-primary-dark;
+	}
 
-    &--secondary {
-        background-color: $color-secondary;
-    }
+	&--secondary {
+		background-color: $color-secondary;
+	}
 }
 </style>

@@ -15,19 +15,19 @@ const getters = {
 
 const mutations = {
 	startLoading: state => {
-        state.vehicles = []
-        state.loaded = false
-    },
-  
-    fail: state => {
-        state.vehicles = []
-        state.loaded = false
-    },
+		state.vehicles = []
+		state.loaded = false
+	},
+
+	fail: state => {
+		state.vehicles = []
+		state.loaded = false
+	},
 
 	setVehicles: (state, payload) => {
-        state.vehicles = payload
-        state.loaded = true
-    },
+		state.vehicles = payload
+		state.loaded = true
+	},
 
 	addVehicle (state, payload) {
 		state.vehicles.push(payload)
@@ -37,7 +37,7 @@ const mutations = {
 		const index = state.vehicles.findIndex(vehicle => vehicle.id === payload.id)
 		state.vehicles.splice(index, 1, payload)
 	},
-	
+
 	deleteVehicle: (state, payload) => {
 		state.vehicles = state.vehicles.filter(vehicle => vehicle.id !== payload)
 	}
@@ -45,25 +45,25 @@ const mutations = {
 
 const actions = {
 	loadVehicles: ({ commit }) => {
-        commit('startLoading')
-        Vue.http.get('https://cmrflyrent-b50d7-default-rtdb.europe-west1.firebasedatabase.app/vehicles.json')
-        .then(res => res.json())
-        .then(data => {
-            const vehicles = []
-            if (data) {
-                for (const [key, value] of Object.entries(data)) {
-                    vehicles.push({
-                        id: key,
-                        ...value
-                    })
-                }
-            }
-            commit('setVehicles', vehicles)
-        })
-        .catch(() => {
-            commit('fail')
-        })
-    },
+		commit('startLoading')
+		Vue.http.get('https://cmrflyrent-b50d7-default-rtdb.europe-west1.firebasedatabase.app/vehicles.json')
+		.then(res => res.json())
+		.then(data => {
+			const vehicles = []
+			if (data) {
+				for (const [key, value] of Object.entries(data)) {
+					vehicles.push({
+						id: key,
+						...value
+					})
+				}
+			}
+			commit('setVehicles', vehicles)
+		})
+		.catch(() => {
+			commit('fail')
+		})
+	},
 
 	addVehicle: ({ commit }, vehicle) => {
 		return new Promise((resolve, reject) => {
@@ -96,18 +96,18 @@ const actions = {
 	},
 
 	editVehicle: ({ commit }, { id, ...vehicle }) => {
-        return new Promise((resolve, reject) => {
-            Vue.http.put('https://cmrflyrent-b50d7-default-rtdb.europe-west1.firebasedatabase.app/vehicles/' + id + '.json', vehicle)
-            .then( response => response.json() )
-            .then( () => {
-                commit('editVehicle', { id, ...vehicle })
-                resolve({ ok: true })
-            })
-            .catch(() => {
+		return new Promise((resolve, reject) => {
+			Vue.http.put('https://cmrflyrent-b50d7-default-rtdb.europe-west1.firebasedatabase.app/vehicles/' + id + '.json', vehicle)
+			.then( response => response.json() )
+			.then( () => {
+				commit('editVehicle', { id, ...vehicle })
+				resolve({ ok: true })
+			})
+			.catch(() => {
 				reject({ ok: false })
-            })
-        })
-    }
+			})
+		})
+	}
 }
 
 export default {

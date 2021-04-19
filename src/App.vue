@@ -52,7 +52,7 @@ body {
 }
 
 #app {
-	min-height: 95vh;
+	min-height: 100vh;
 	background: linear-gradient(to bottom right, $color-primary-light, $color-secondary-light);
 
 	position: relative;
