@@ -30,7 +30,7 @@ export default {
 
 	methods: {
 		...mapActions([
-			'deleteVehicle', 'addVehicle'
+			'deleteVehicle', 'addVehicle', 'addError'
 		]),
 
 		vehicleClicked (vehicleId) {
@@ -43,7 +43,7 @@ export default {
 				console.log('deleteVehicle data', data)
 			})
 			.catch(err => {
-				console.log('deleteVehicle err', err)
+				this.addError(err.err)
 			})
 		},
 
@@ -53,7 +53,7 @@ export default {
 				console.log('addVehicle data', data)
 			})
 			.catch(err => {
-				console.log('addVehicle err', err)
+				this.addError(err.err)
 			})
 		},
 	},

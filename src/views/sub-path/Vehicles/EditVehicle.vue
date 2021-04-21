@@ -19,7 +19,7 @@ export default {
 
 	methods: {
 		...mapActions([
-			'editVehicle'
+			'editVehicle', 'addError'
 		]),
 
 		vehicleSave (vehicle) {
@@ -29,7 +29,8 @@ export default {
 				this.$router.push('/vehicles')
 			})
 			.catch(err => {
-				console.log('editVehicle err', err)
+				this.addError(err.err)
+				this.$router.push('/vehicles')
 			})
 		}
 	}

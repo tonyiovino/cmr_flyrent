@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
 		<app-loading-status />
+		<app-errors />
 
 		<div id="app__nav">
 			<app-text-link path="/">Home</app-text-link>
