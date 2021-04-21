@@ -24,8 +24,12 @@ export default {
 
 		vehicleSave (vehicle) {
 			this.editVehicle(vehicle)
-			.then( () => {
+			.then(data => {
+				console.log('editVehicle data', data)
 				this.$router.push('/vehicles')
+			})
+			.catch(err => {
+				console.log('editVehicle err', err)
 			})
 		}
 	}

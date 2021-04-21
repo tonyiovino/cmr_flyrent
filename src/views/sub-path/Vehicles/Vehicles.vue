@@ -39,10 +39,22 @@ export default {
 
 		vehicleDelete (vehicleId) {
 			this.deleteVehicle(vehicleId)
+			.then(data => {
+				console.log('deleteVehicle data', data)
+			})
+			.catch(err => {
+				console.log('deleteVehicle err', err)
+			})
 		},
 
 		vehicleSave (vehicle) {
 			this.addVehicle(vehicle)
+			.then(data => {
+				console.log('addVehicle data', data)
+			})
+			.catch(err => {
+				console.log('addVehicle err', err)
+			})
 		},
 	},
 
