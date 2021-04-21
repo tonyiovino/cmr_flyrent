@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 const state = {
 	vehicles: [],
 	loaded: false
@@ -24,90 +22,53 @@ const mutations = {
 		state.loaded = false
 	},
 
-	setVehicles: (state, payload) => {
-		state.vehicles = payload
-		state.loaded = true
-	},
+	set_vehicles: (state, payload) => {
+        state.vehicles = payload
+        state.loaded = true
+    },
 
-	addVehicle (state, payload) {
+	addTo_vehicles (state, payload) {
 		state.vehicles.push(payload)
 	},
 
-	editVehicle: (state, payload) => {
+	editFrom_vehicles: (state, payload) => {
 		const index = state.vehicles.findIndex(vehicle => vehicle.id === payload.id)
 		state.vehicles.splice(index, 1, payload)
 	},
-
-	deleteVehicle: (state, payload) => {
+	
+	deleteFrom_vehicles: (state, payload) => {
 		state.vehicles = state.vehicles.filter(vehicle => vehicle.id !== payload)
 	}
 }
 
 const actions = {
-	loadVehicles: ({ commit }) => {
-		commit('startLoading')
-		Vue.http.get('https://cmrflyrent-b50d7-default-rtdb.europe-west1.firebasedatabase.app/vehicles.json')
-		.then(res => res.json())
-		.then(data => {
-			const vehicles = []
-			if (data) {
-				for (const [key, value] of Object.entries(data)) {
-					vehicles.push({
-						id: key,
-						...value
-					})
-				}
-			}
-			commit('setVehicles', vehicles)
-		})
-		.catch(() => {
-			commit('fail')
+	loadVehicles: (context) => {
+		context.dispatch('loadData', 'vehicles')
+	},
+
+	addVehicle: (context, vehicle) => {
+		return new Promise((resolve, reject) => {
+			context.dispatch('addItem', { collectionName: 'vehicles', item: vehicle })
+			.then( data => resolve(data) )
+			.catch( err => reject(err) )
 		})
 	},
 
-	addVehicle: ({ commit }, vehicle) => {
+	deleteVehicle (context, vehicleId) {
 		return new Promise((resolve, reject) => {
-			Vue.http.post('https://cmrflyrent-b50d7-default-rtdb.europe-west1.firebasedatabase.app/vehicles.json', vehicle)
-			.then( response => response.json() )
-			.then( data => {
-				vehicle.id = data.name
-				commit('addVehicle', vehicle)
-				resolve({ ok: true })
-			})
-			.catch(() => {
-				reject({ ok: false })
-			})
+			context.dispatch('deleteItem', { collectionName: 'vehicles', itemId: vehicleId })
+			.then( data => resolve(data) )
+			.catch( err => reject(err) )
 		})
 	},
 
-	deleteVehicle (context, payload) {
-		console.log(payload)
+	editVehicle: (context, { id, ...vehicle }) => {
 		return new Promise((resolve, reject) => {
-			Vue.http.delete('https://cmrflyrent-b50d7-default-rtdb.europe-west1.firebasedatabase.app/vehicles/' + payload + '.json')
-			.then(res => res.json())
-			.then(() => {
-				context.commit('deleteVehicle', payload)
-				resolve({ ok: true })
-			})
-			.catch(() => {
-				reject({ ok: false })
-			})
+			context.dispatch('editItem', { collectionName: 'vehicles', id, ...vehicle })
+			.then( data => resolve(data) )
+			.catch( err => reject(err) )
 		})
-	},
-
-	editVehicle: ({ commit }, { id, ...vehicle }) => {
-		return new Promise((resolve, reject) => {
-			Vue.http.put('https://cmrflyrent-b50d7-default-rtdb.europe-west1.firebasedatabase.app/vehicles/' + id + '.json', vehicle)
-			.then( response => response.json() )
-			.then( () => {
-				commit('editVehicle', { id, ...vehicle })
-				resolve({ ok: true })
-			})
-			.catch(() => {
-				reject({ ok: false })
-			})
-		})
-	}
+    }
 }
 
 export default {

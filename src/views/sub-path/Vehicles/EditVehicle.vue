@@ -19,12 +19,17 @@ export default {
 
 	methods: {
 		...mapActions([
-			'editVehicle'
+			'editVehicle', 'addError'
 		]),
 
 		vehicleSave (vehicle) {
 			this.editVehicle(vehicle)
-			.then( () => {
+			.then(data => {
+				console.log('editVehicle data', data)
+				this.$router.push('/vehicles')
+			})
+			.catch(err => {
+				this.addError(err.err)
 				this.$router.push('/vehicles')
 			})
 		}
