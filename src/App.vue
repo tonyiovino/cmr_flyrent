@@ -54,8 +54,16 @@ body {
 
 #app {
 	min-height: 100vh;
-	background: linear-gradient(to bottom right, $color-primary-light, $color-secondary-light);
+	background: $color-grey-light;
 
 	position: relative;
+
+	&__nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0 2rem;
+		width: 10vw;
+	}
 }
 </style>

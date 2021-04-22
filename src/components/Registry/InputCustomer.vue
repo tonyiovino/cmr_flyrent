@@ -6,7 +6,7 @@
 		<app-form @submit="submit">
 			<div class="form__group">
 				<input type="text" class="form__input" id="surname" v-model="surname" placeholder="Cognome" required>
-				<label for="surname" class="form__label">Marca</label>
+				<label for="surname" class="form__label">Cognome</label>
 			</div>
 
 			<div class="form__group">

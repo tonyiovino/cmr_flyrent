@@ -29,7 +29,17 @@ export default {
 	
 	&:hover {
 		color: $color-white;
-		background-color: rgba($color-black, .6);
+		background-color: rgba(#000, .6);
+
+		box-shadow: 0 1rem 2rem #00000033;
+		transform: translateY(-4px);
+		transition: all .1s;
+
+	}
+
+	&:active {
+		transform: translateY(-1px);
+		box-shadow: 0 .5rem 1rem #00000033;
 	}
 
 	&__header {
