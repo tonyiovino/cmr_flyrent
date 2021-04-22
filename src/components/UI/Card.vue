@@ -18,23 +18,24 @@ export default {
 
 <style lang="scss">
 .card {
-	background: rgba($color-white, .6);
-	color: $color-black;
+	background: $color-primary;
+	color: $color-white;
 	margin: 2rem;
 	text-align: center;
 	border-radius: 2px;
 	padding-bottom: 1rem;
 	min-height: 20vh;
 	cursor: pointer;
+
+	animation: moveInLeft 1s ease-out;
 	
 	&:hover {
 		color: $color-white;
-		background-color: rgba(#000, .6);
+		background-color: $color-secondary;
 
 		box-shadow: 0 1rem 2rem #00000033;
 		transform: translateY(-4px);
 		transition: all .1s;
-
 	}
 
 	&:active {
@@ -54,7 +55,6 @@ export default {
 	&__body {
 		display: flex;
 		flex-direction: column;
-		
 		
 		&--title {
 			font-size: 2rem;

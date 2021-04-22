@@ -7,8 +7,14 @@ body {
 
 .heading-primary {
 	font-size: 6rem;
-	color: $color-secondary-light;
-	margin-bottom: 3rem;
+	color: $color-black;
+	margin-bottom: 6rem;
+	padding-top: 2rem;
+	text-align: center;
+	font-weight: 300;
+	letter-spacing: 0.5rem;
+
+	animation: moveInRight 1s ease-out;
 }
 
 .heading-secondary {
@@ -16,5 +22,4 @@ body {
 	margin-bottom: 2rem;
 	font-style: italic;
 	margin-left: 2rem;
-	letter-spacing: 1rem;
 }

@@ -22,9 +22,9 @@ export default {
 		content: '';
 		display: block;
 		margin: auto;
-		height: .4rem;
+		height: .2rem;
 		width: 0rem;
-		background-color: $color-white;
+		background-image: linear-gradient(to right, rgba($color-primary, 0.8), rgba($color-secondary, 0.8));
 		transition: all 0.15s linear;
 	}
 

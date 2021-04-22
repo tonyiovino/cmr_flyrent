@@ -4,7 +4,7 @@
 		<app-errors />
 
 		<div id="app__nav">
-			<app-text-link path="/">Home</app-text-link>
+			<app-text-link path="/"><img id="app__icon" src="/img/icon-flyrent.png" alt="Error"></app-text-link>
 			<!-- <router-link to="/about" class="btn btn--primary">About</router-link> -->
 		</div>
 
@@ -54,7 +54,9 @@ body {
 
 #app {
 	min-height: 100vh;
-	background: $color-grey-light;
+	background-color: $color-grey-light;
+	background-image: linear-gradient(to bottom, rgba($color-primary-light, 0.8), rgba($color-secondary-light, 0.8));
+
 
 	position: relative;
 
@@ -63,7 +65,14 @@ body {
 		flex-direction: row;
 		justify-content: space-between;
 		padding: 0 2rem;
-		width: 10vw;
+		padding: 2rem 4rem;
+		position: absolute;
+
+		animation: moveInTop 1s ease-out;
+	}
+
+	&__icon {
+		width: 12vw;
 	}
 }
 </style>

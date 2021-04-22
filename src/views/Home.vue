@@ -1,5 +1,6 @@
 <template>
 	<app-page>
+		<h1 class="heading-primary">Pagina Principale</h1>
 		<app-list className="list--grid">
 			<app-card
 				v-for="page in pages"

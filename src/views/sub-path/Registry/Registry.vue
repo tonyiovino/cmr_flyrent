@@ -1,6 +1,6 @@
 <template>
 	<app-page>
-		<h2 class="heading-secondary">Gestione anagrafica</h2>
+		<h1 class="heading-primary">Gestione anagrafica</h1>
 		<app-input-customer
 			@save="customerSave"
 		></app-input-customer>
