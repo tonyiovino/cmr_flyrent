@@ -1,16 +1,18 @@
 <template>
 	<app-page>
 		<h1 class="heading-primary">Gestione anagrafica</h1>
-		<app-input-customer
-			@save="customerSave"
-		></app-input-customer>
-		
-		<app-list>
-			<app-customer v-for="customer in customers" :key="customer.id"
-				:data="customer"
-				@delete="customerDelete"
-			></app-customer>
-		</app-list>
+		<app-container>
+			<app-input-customer
+				@save="customerSave"
+			></app-input-customer>
+			
+			<app-list>
+				<app-customer v-for="customer in customers" :key="customer.id"
+					:data="customer"
+					@delete="customerDelete"
+				></app-customer>
+			</app-list>
+		</app-container>
 	</app-page>
 </template>
 

@@ -1,12 +1,12 @@
 <template>
-	<router-link class="text-link" :to="path">
+	<router-link class="text-link" :class="className" :to="path">
 		<slot></slot>
 	</router-link>
 </template>
 
 <script>
 export default {
-	props: [ 'path' ]
+	props: [ 'path', 'className' ]
 }
 </script>
 
@@ -18,18 +18,20 @@ export default {
 	text-decoration: none;
 
 
-	&::after {
-		content: '';
-		display: block;
-		margin: auto;
-		height: .2rem;
-		width: 0rem;
-		background-image: linear-gradient(to right, rgba($color-primary, 0.8), rgba($color-secondary, 0.8));
-		transition: all 0.15s linear;
-	}
-
-	&:hover::after {
-		width: 100%;
+	&--icon {
+		&::after {
+			content: '';
+			display: block;
+			margin: auto;
+			height: .2rem;
+			width: 0rem;
+			background-image: linear-gradient(to right, rgba($color-primary, 0.8), rgba($color-secondary, 0.8));
+			transition: all 0.15s linear;
+		}
+	
+		&:hover::after {
+			width: 100%;
+		}
 	}
 }
 </style>

@@ -1,9 +1,12 @@
 <template>
 	<app-page>
-		<app-input-vehicle
-			:id="$route.params.id"
-			@save="vehicleSave"
-		></app-input-vehicle>
+		<h1 class="heading-primary">Gestione veicoli</h1>
+		<app-container>
+			<app-input-vehicle
+				:id="$route.params.id"
+				@save="vehicleSave"
+			></app-input-vehicle>
+		</app-container>
 	</app-page>
 </template>
 

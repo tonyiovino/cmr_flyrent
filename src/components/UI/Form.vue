@@ -37,7 +37,7 @@
 		color: inherit;
 		padding: 1.5rem 2rem;
 		border-radius: 3rem;
-		background-color: rgba($color-primary-dark, .9);
+		background-color: rgba($color-primary-dark, .6);
 		border: none;
 		border-bottom: 5px solid transparent;
 		width: 100%;

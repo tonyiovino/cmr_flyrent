@@ -4,7 +4,7 @@
 		<app-errors />
 
 		<div id="app__nav">
-			<app-text-link path="/"><img id="app__icon" src="/img/icon-flyrent.png" alt="Error"></app-text-link>
+			<app-text-link class="text-link--icon" path="/"><img id="app__icon" src="/img/icon-flyrent.png" alt="Error"></app-text-link>
 			<!-- <router-link to="/about" class="btn btn--primary">About</router-link> -->
 		</div>
 
@@ -64,7 +64,6 @@ body {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 0 2rem;
 		padding: 2rem 4rem;
 		position: absolute;
 

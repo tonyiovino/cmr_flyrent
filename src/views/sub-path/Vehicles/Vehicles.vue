@@ -1,17 +1,19 @@
 <template>
 	<app-page>
 		<h1 class="heading-primary">Gestione veicoli</h1>
-		<app-input-vehicle
-			@save="vehicleSave"
-		></app-input-vehicle>
+		<app-container>
+			<app-input-vehicle
+				@save="vehicleSave"
+			></app-input-vehicle>
 
-		<app-list>
-			<app-vehicle v-for="vehicle in vehicles" :key="vehicle.id"
-				:data="vehicle"
-				@clicked="vehicleClicked"
-				@delete="vehicleDelete"
-			></app-vehicle>
-		</app-list>
+			<app-list>
+				<app-vehicle v-for="vehicle in vehicles" :key="vehicle.id"
+					:data="vehicle"
+					@clicked="vehicleClicked"
+					@delete="vehicleDelete"
+				></app-vehicle>
+			</app-list>
+		</app-container>
 	</app-page>
 </template>
 
