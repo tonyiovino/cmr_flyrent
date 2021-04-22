@@ -7,6 +7,7 @@
 <style lang="scss">
 .container {
 	position: absolute;
-	// in work
+	padding: 0 4rem;
+	width: 100vw;
 }
 </style>

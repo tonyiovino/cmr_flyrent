@@ -8,6 +8,9 @@
 .form {
 	margin-bottom: 1rem;
 	color: $color-white;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 
 	&__row {
 		display: flex;
