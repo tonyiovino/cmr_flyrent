@@ -1,19 +1,20 @@
 <template>
 	<app-page>
-		<h1 class="heading-primary">Gestione veicoli</h1>
-		<app-container>
+		<template v-slot:header>
+			<h1 class="heading-primary">Gestione veicoli</h1>
+		</template>
+		<template v-slot:input>
 			<app-input-vehicle
 				@save="vehicleSave"
 			></app-input-vehicle>
-
-			<app-list>
-				<app-vehicle v-for="vehicle in vehicles" :key="vehicle.id"
-					:data="vehicle"
-					@clicked="vehicleClicked"
-					@delete="vehicleDelete"
-				></app-vehicle>
-			</app-list>
-		</app-container>
+		</template>
+		<app-list>
+			<app-vehicle v-for="vehicle in vehicles" :key="vehicle.id"
+				:data="vehicle"
+				@clicked="vehicleClicked"
+				@delete="vehicleDelete"
+			></app-vehicle>
+		</app-list>
 	</app-page>
 </template>
 
@@ -32,7 +33,7 @@ export default {
 
 	methods: {
 		...mapActions([
-			'deleteVehicle', 'addVehicle', 'addError'
+			'deleteVehicle', 'addVehicle', 'addError', 'addLogMessage'
 		]),
 
 		vehicleClicked (vehicleId) {
@@ -42,7 +43,7 @@ export default {
 		vehicleDelete (vehicleId) {
 			this.deleteVehicle(vehicleId)
 			.then(data => {
-				console.log('deleteVehicle data', data)
+				this.addLogMessage(data.msg)
 			})
 			.catch(err => {
 				this.addError(err.err)
@@ -52,7 +53,7 @@ export default {
 		vehicleSave (vehicle) {
 			this.addVehicle(vehicle)
 			.then(data => {
-				console.log('addVehicle data', data)
+				this.addLogMessage(data.msg)
 			})
 			.catch(err => {
 				this.addError(err.err)

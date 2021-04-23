@@ -2,6 +2,7 @@
 	<div id="app">
 		<app-loading-status />
 		<app-errors />
+		<app-log-messages />
 
 		<div id="app__nav">
 			<app-text-link class="text-link--icon" path="/"><img id="app__icon" src="/img/icon-flyrent.png" alt="Error"></app-text-link>
@@ -14,6 +15,8 @@
 
 <script>
 import LoadingStatus from './components/TheLoadingStatus.vue'
+import Errors from './components/UI/Errors/Errors.vue'
+import LogMessages from './components/UI/LogMessages/LogMessages.vue'
 
 import { mapActions } from 'vuex'
 
@@ -29,7 +32,9 @@ export default {
 	},
 
 	components: {
-		appLoadingStatus: LoadingStatus
+		appLoadingStatus: LoadingStatus,
+		appErrors: Errors,
+		appLogMessages: LogMessages
 	}
 }
 </script>

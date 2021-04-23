@@ -1,12 +1,15 @@
 <template>
 	<app-page>
-		<h1 class="heading-primary">Gestione veicoli</h1>
-		<app-container>
+		<template v-slot:header>
+			<h1 class="heading-primary">Gestione veicoli</h1>
+		</template>
+
+		<template v-slot:input>
 			<app-input-vehicle
 				:id="$route.params.id"
 				@save="vehicleSave"
 			></app-input-vehicle>
-		</app-container>
+		</template>
 	</app-page>
 </template>
 
@@ -22,13 +25,13 @@ export default {
 
 	methods: {
 		...mapActions([
-			'editVehicle', 'addError'
+			'editVehicle', 'addError', 'addLogMessage'
 		]),
 
 		vehicleSave (vehicle) {
 			this.editVehicle(vehicle)
 			.then(data => {
-				console.log('editVehicle data', data)
+				this.addLogMessage(data.msg)
 				this.$router.push('/vehicles')
 			})
 			.catch(err => {

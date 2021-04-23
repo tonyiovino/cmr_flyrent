@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import pages from './modules/pages'
 import errors from './modules/errors'
+import logmessages from './modules/logmessages'
 import vehicles from './modules/vehicles'
 import customers from './modules/customers'
 
@@ -85,6 +86,7 @@ export default new Vuex.Store({
 	modules: {
 		pages,
 		errors,
+		logmessages,
 		vehicles,
 		customers
 	}

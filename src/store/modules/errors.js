@@ -30,7 +30,6 @@ const actions = {
 	},
 
 	removeError: (context, errorId) => {
-		console.log(errorId)
 		context.commit('removeError', errorId)
 	}
 }
