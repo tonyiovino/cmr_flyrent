@@ -9,7 +9,7 @@
 	margin-bottom: 1rem;
 	color: $color-white;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-evenly;
 
 	&__row {

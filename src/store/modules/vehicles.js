@@ -49,7 +49,7 @@ const actions = {
 	addVehicle: (context, vehicle) => {
 		return new Promise((resolve, reject) => {
 			context.dispatch('addItem', { collectionName: 'vehicles', item: vehicle })
-			.then( data => resolve(data) )
+			.then( data => resolve({ msg: 'Veicolo aggiunto', ...data }) )
 			.catch( err => reject(err) )
 		})
 	},
@@ -57,7 +57,7 @@ const actions = {
 	deleteVehicle (context, vehicleId) {
 		return new Promise((resolve, reject) => {
 			context.dispatch('deleteItem', { collectionName: 'vehicles', itemId: vehicleId })
-			.then( data => resolve(data) )
+			.then( data => resolve({ msg: 'Veicolo rimosso', ...data }) )
 			.catch( err => reject(err) )
 		})
 	},
@@ -65,7 +65,7 @@ const actions = {
 	editVehicle: (context, { id, ...vehicle }) => {
 		return new Promise((resolve, reject) => {
 			context.dispatch('editItem', { collectionName: 'vehicles', id, ...vehicle })
-			.then( data => resolve(data) )
+			.then( data => resolve({ msg: 'Veicolo aggiornato', ...data }) )
 			.catch( err => reject(err) )
 		})
     }

@@ -1,6 +1,9 @@
 <template>
 	<app-page class="page--center">
-		<h1 class="heading-primary">Pagina Principale</h1>
+		<template v-slot:header>
+			<h1 class="heading-primary">qualcos'altro</h1>
+		</template>
+
 		<app-list className="list--grid">
 			<app-card
 				v-for="page in pages"

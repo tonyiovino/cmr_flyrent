@@ -4,19 +4,21 @@
 		<h2 class="heading-secondary" v-else>Nuovo Veicolo</h2>
 
 		<app-form @submit="submit">
-			<div class="form__group">
-				<input type="text" class="form__input" id="brand" v-model.trim="brand" placeholder="Marca" required>
-				<label for="brand" class="form__label">Marca</label>
-			</div>
+			<div class="form__row">
+				<div class="form__group">
+					<input type="text" class="form__input" id="brand" v-model.trim="brand" placeholder="Marca" required>
+					<label for="brand" class="form__label">Marca</label>
+				</div>
 
-			<div class="form__group">
-				<input type="text" class="form__input" id="model" v-model.trim="model" placeholder="Modello" required>
-				<label for="model" class="form__label">Modello</label>
-			</div>
+				<div class="form__group">
+					<input type="text" class="form__input" id="model" v-model.trim="model" placeholder="Modello" required>
+					<label for="model" class="form__label">Modello</label>
+				</div>
 
-			<div class="form__group">
-				<input type="text" class="form__input" id="license_plate" v-model.trim="license_plate" placeholder="Targa" required>
-				<label for="license_plate" class="form__label">Targa</label>
+				<div class="form__group">
+					<input type="text" class="form__input" id="license_plate" v-model.trim="license_plate" placeholder="Targa" required>
+					<label for="license_plate" class="form__label">Targa</label>
+				</div>
 			</div>
 
 			<div class="form__actions">
@@ -26,12 +28,11 @@
 				<app-btn class="btn--secondary" v-else type="reset">Pulisci</app-btn>
 			</div>
 		</app-form>
-
 	</div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
 	props: [ 'id' ],
@@ -51,6 +52,10 @@ export default {
 	},
 
 	methods: {
+		...mapActions([
+			'addLogMessage'
+		]),
+
 		submit () {
 			if (this.brand === '' || this.model === '' || this.license_plate === '') return
 
@@ -62,6 +67,8 @@ export default {
 			})
 			
 			this.brand = this.model = this.license_plate = ''
+
+			this.addLogMessage('Salvataggio in corso')
 		}
 	},
 
