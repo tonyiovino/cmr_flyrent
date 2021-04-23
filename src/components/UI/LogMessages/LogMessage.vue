@@ -1,6 +1,8 @@
 <template>
 	<div class="log-message" @click="markRead">
 		{{msg.id }} - {{ msg.msg }}
+		<!-- Tasto per annullare la modifica "Undo" -->
+		<app-btn class="btn--undo">&crarr;</app-btn>
 	</div>
 </template>
 
@@ -22,8 +24,10 @@ export default {
 	color: $color-white;
 	background-color: $color-primary;
 	padding: 1rem;
-	cursor: pointer;
 	animation: moveInRight 1s ease-out;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
 
 	&:not(:last-child) {
 		margin-bottom: 1rem;

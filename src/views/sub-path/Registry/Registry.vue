@@ -1,18 +1,25 @@
 <template>
 	<app-page>
-		<h1 class="heading-primary">Gestione anagrafica</h1>
-		<app-container>
-			<app-input-customer
+		<template v-slot:header>
+			<h1 class="heading-primary">Gestione anagrafica</h1>
+		</template>
+		
+		<app-btn class="btn--add" @click="ok">+</app-btn>
+		<!--
+			I templata va sopra al pulsante, e poi pensavo
+			che non funzionasse con v-show
+		-->
+		<!-- <template v-slot:input> -->
+			<app-input-customer v-show="shoow"
 				@save="customerSave"
 			></app-input-customer>
-			
-			<app-list>
-				<app-customer v-for="customer in customers" :key="customer.id"
-					:data="customer"
-					@delete="customerDelete"
-				></app-customer>
-			</app-list>
-		</app-container>
+		<!-- </template> -->
+		<app-list>
+			<app-customer v-for="customer in customers" :key="customer.id"
+				:data="customer"
+				@delete="customerDelete"
+			></app-customer>
+		</app-list>
 	</app-page>
 </template>
 
@@ -23,6 +30,12 @@ import InputCustomer from '@/components/Registry/InputCustomer.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+	data (){
+		return {
+			shoow: false
+		}
+	},
+
 	computed: {
 		...mapGetters([
 			'customers'
@@ -42,6 +55,10 @@ export default {
 			console.log(customer)
 			this.addCustomer(customer)
 		},
+
+		ok () {
+			this.shoow = !this.shoow
+		}
 	},
 
 	components: {
