@@ -29,7 +29,8 @@ export default {
 	}
 
 	&__header {
-
+		width: 50vw;
+		margin: 0 auto;
 	}
 
 	&__input {

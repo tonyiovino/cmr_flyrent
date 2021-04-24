@@ -1,7 +1,7 @@
 const state = {
 	customers: [
-		{ id: '1', surname: 'Rossi', name: 'Luca' },
-		{ id: '2', surname: 'Verdi', name: 'Mario' }
+		{ id: '1', surname: 'Rossi', name: 'Luca', born_date: '23/03/90' },
+		{ id: '2', surname: 'Verdi', name: 'Mario', born_date: '4/6/90' }
 	],
 
 	nextId: 3
