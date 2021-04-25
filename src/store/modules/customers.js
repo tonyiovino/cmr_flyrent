@@ -1,44 +1,76 @@
 const state = {
-	customers: [
-		{ id: '1', surname: 'Rossi', name: 'Luca', born_date: '23/03/90' },
-		{ id: '2', surname: 'Verdi', name: 'Mario', born_date: '4/6/90' }
-	],
-
-	nextId: 3
+	customers: [],
+	// { id: '1', surname: 'Rossi', name: 'Luca', born_date: '23/03/90' },
+	// { id: '2', surname: 'Verdi', name: 'Mario', born_date: '4/6/90' }
+	loaded: false
 }
 
 const getters = {
 	customers: state => state.customers,
+	customersLoaded: state => state.loaded,
 	customerById: state => id => {
 		return state.customers.find(customer => customer.id === id)
 	}
 }
 
 const mutations = {
-	addCustomer (state, payload) {
+	startLoading: state => {
+		state.customers = []
+		state.loaded = false
+	},
+
+	fail: state => {
+		state.customers = []
+		state.loaded = false
+	},
+
+	set_customers: (state, payload) => {
+        state.customers = payload
+        state.loaded = true
+    },
+
+	addTo_customers (state, payload) {
 		state.customers.push(payload)
 	},
 
-	deleteCustomer: (state, payload) => {
-		state.customers = state.customers.filter(customer => customer.id !== payload)
+	editFrom_customers: (state, payload) => {
+		const index = state.customers.findIndex(customer => customer.id === payload.id)
+		state.customers.splice(index, 1, payload)
 	},
-
-	incrNextId (state) {
-		state.nextId++
+	
+	deleteFrom_customers: (state, payload) => {
+		state.customers = state.customers.filter(customer => customer.id !== payload)
 	}
 }
 
 const actions = {
-	addCustomer (context, payload) {
-		payload.id = "" + context.state.nextId
-		context.commit('incrNextId')
-		context.commit('addCustomer', payload)
+	loadCustomers: (context) => {
+		context.dispatch('loadData', 'customers')
 	},
 
-	deleteCustomer (context, payload) {
-		console.log(payload)
-		context.commit('deleteCustomer', payload)
+	addCustomer: (context, customer) => {
+		return new Promise((resolve, reject) => {
+			context.dispatch('addItem', { collectionName: 'customers', item: customer })
+			.then( data => resolve({ msg: 'Cliente aggiunto', ...data }) )
+			.catch( err => reject(err) )
+		})
 	},
+
+	deleteCustomer (context, customerId) {
+		return new Promise((resolve, reject) => {
+			context.dispatch('deleteItem', { collectionName: 'customers', itemId: customerId })
+			.then( data => resolve({ msg: 'Cliente rimosso', ...data }) )
+			.catch( err => reject(err) )
+		})
+	},
+
+	editCustomer: (context, { id, ...customer }) => {
+		return new Promise((resolve, reject) => {
+			context.dispatch('editItem', { collectionName: 'customers', id, ...customer })
+			.then( data => resolve({ msg: 'Cliente aggiornato', ...data }) )
+			.catch( err => reject(err) )
+		})
+    }
 }
 
 export default {

@@ -15,14 +15,12 @@
 				@save="customerSave"
 			></app-input-customer>
 		</template>
-		<app-table>
-			<app-list>
-				<app-customer v-for="customer in customers" :key="customer.id"
-					:data="customer"
-					@delete="customerDelete"
-				></app-customer>
-			</app-list>
-		</app-table>
+		<app-list>
+			<app-customer v-for="customer in customers" :key="customer.id"
+				:data="customer"
+				@delete="customerDelete"
+			></app-customer>
+		</app-list>
 	</app-page>
 </template>
 
@@ -47,18 +45,32 @@ export default {
 
 	methods: {
 		...mapActions([
-			'deleteCustomer', 'addCustomer'
+			'deleteCustomer', 'addCustomer', 'addError', 'addLogMessage'
 		]),
+
+		customerClicked (customerId) {
+			this.$router.push('/customers/' + customerId)
+		},
 
 		customerDelete (customerId) {
 			this.deleteCustomer(customerId)
+			.then(data => {
+				this.addLogMessage(data.msg)
+			})
+			.catch(err => {
+				this.addError(err.err)
+			})
 		},
 
 		customerSave (customer) {
-			console.log(customer)
 			this.addCustomer(customer)
+			.then(data => {
+				this.addLogMessage(data.msg)
+			})
+			.catch(err => {
+				this.addError(err.err)
+			})
 		},
-
 		// ok () {
 		// 	this.shoow = !this.shoow
 		// }
