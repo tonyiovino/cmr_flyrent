@@ -13,10 +13,10 @@ export default {
 <style lang="scss">
 .text-link {
 	display: inline-block;
-	font-size: 6rem;
+	font-size: 3rem;
 	color: $color-black;
 	text-decoration: none;
-
+	border-bottom: 1px solid currentColor;
 
 	&--icon {
 		&::after {

@@ -9,6 +9,7 @@
 			></app-input-vehicle>
 		</template>
 		<app-list>
+			<app-vehicle />
 			<app-vehicle v-for="vehicle in vehicles" :key="vehicle.id"
 				:data="vehicle"
 				@clicked="vehicleClicked"
@@ -28,7 +29,15 @@ export default {
 	computed: {
 		...mapGetters([
 			'vehicles'
-		])
+		]),
+
+		vehicleHeader () {
+			return {
+				brand: 'Marca',
+				model: 'Modello',
+				license_plate: 'Targa'
+			}
+		}
 	},
 
 	methods: {

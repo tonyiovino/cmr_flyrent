@@ -23,11 +23,6 @@ export default {
 .page {
 	min-height: 100vh;
 
-	&--center {
-		margin: 0 auto;
-		width: 60%;
-	}
-
 	&__header {
 		width: 50vw;
 		margin: 0 auto;

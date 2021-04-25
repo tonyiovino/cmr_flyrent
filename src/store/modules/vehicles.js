@@ -1,3 +1,5 @@
+import db from './db'
+
 const state = {
 	vehicles: [],
 	loaded: false
@@ -43,12 +45,12 @@ const mutations = {
 
 const actions = {
 	loadVehicles: (context) => {
-		context.dispatch('loadData', 'vehicles')
+		db.loadData(context, 'vehicles')
 	},
 
 	addVehicle: (context, vehicle) => {
 		return new Promise((resolve, reject) => {
-			context.dispatch('addItem', { collectionName: 'vehicles', item: vehicle })
+			db.addItem(context, { collectionName: 'vehicles', item: vehicle })
 			.then( data => resolve({ msg: 'Veicolo aggiunto', ...data }) )
 			.catch( err => reject(err) )
 		})
@@ -56,7 +58,7 @@ const actions = {
 
 	deleteVehicle (context, vehicleId) {
 		return new Promise((resolve, reject) => {
-			context.dispatch('deleteItem', { collectionName: 'vehicles', itemId: vehicleId })
+			db.deleteItem(context, { collectionName: 'vehicles', itemId: vehicleId })
 			.then( data => resolve({ msg: 'Veicolo rimosso', ...data }) )
 			.catch( err => reject(err) )
 		})
@@ -64,7 +66,7 @@ const actions = {
 
 	editVehicle: (context, { id, ...vehicle }) => {
 		return new Promise((resolve, reject) => {
-			context.dispatch('editItem', { collectionName: 'vehicles', id, ...vehicle })
+			db.editItem(context, { collectionName: 'vehicles', id, ...vehicle })
 			.then( data => resolve({ msg: 'Veicolo aggiornato', ...data }) )
 			.catch( err => reject(err) )
 		})
