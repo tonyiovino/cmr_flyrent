@@ -1,6 +1,6 @@
 <template>
-	<div class="vehicle"  :class="{ 'vehicle--header': isHeader }" @click="$emit('clicked', ext_data.id)">
-		<span class="vehicle__data">
+	<div class="vehicle list-item" :class="{ 'list-item--header': isHeader }" @click="$emit('clicked', ext_data.id)">
+		<span class="vehicle__data list-item__data">
 			<span class="vehicle__data--brand">
 				{{ ext_data.brand }}
 			</span>
@@ -11,7 +11,7 @@
 				{{ ext_data.license_plate }}
 			</span>
 		</span>
-		<span class="vehicle__actions">
+		<span class="vehicle__actions list-item__actions">
 			<app-btn className="btn--flat" @click="$emit('delete', ext_data.id)">&times;</app-btn>
 		</span>
 	</div>
@@ -42,62 +42,5 @@ export default {
 
 <style lang="scss">
 .vehicle {
-	background-color: $color-secondary-dark;
-	color: $color-white;
-	padding: 1rem 1rem 1rem 2rem;
-	font-size: 2rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-radius: 0px;
-	margin-bottom: .1rem;
-	letter-spacing: 0.2rem;
-	word-spacing: 0.7rem;
-	cursor: pointer;
-
-	&:hover {
-		background-color: lighten($color-secondary-dark, 20%);
-	}
-
-	&--header {
-		background-color: darken($color-primary-dark, 5%);
-		color: $color-white;
-		cursor: default;
-	}
-
-	&--header:hover {
-		background-color: darken($color-primary-dark, 5%);
-	}
-
-	&--header &__actions {
-		visibility: hidden;
-	}
-
-	&--header &__data {
-		font-weight: 900;
-	}
-
-	&:nth-child(even) {
-		background-color: darken($color-secondary-dark, 10%);
-		color: $color-white;
-
-		&:hover {
-			background-color: lighten($color-secondary-dark, 20%);
-		}
-	}
-
-	&__data {
-		font-weight: 400;
-		width: 100%;
-		display: inline-grid;
-		grid-template-columns: repeat(3, 1fr);
-	}
-
-	&__actions {
-		color: $color-secondary-light;
-		display: flex;
-		justify-content: space-evenly;
-		align-items: stretch;
-	}
 }
 </style>

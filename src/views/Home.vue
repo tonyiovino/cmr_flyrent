@@ -1,16 +1,16 @@
 <template>
-	<app-page class="page--center">
+	<app-page>
 		<template v-slot:header>
 			<h1 class="heading-primary">qualcos'altro</h1>
 		</template>
 
-		<app-list className="list--grid">
+		<div class="home-grid">
 			<app-card
 				v-for="page in pages"
 				:key="page.id"
 				:data="page"
 			></app-card>
-		</app-list>
+		</div>
 	</app-page>
 </template>
 
@@ -27,3 +27,12 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss">
+.home-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-items: center;
+	align-items: center;
+}
+</style>
