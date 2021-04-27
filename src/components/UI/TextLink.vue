@@ -16,7 +16,6 @@ export default {
 	font-size: 3rem;
 	color: $color-black;
 	text-decoration: none;
-	border-bottom: 1px solid currentColor;
 
 	&--icon {
 		&::after {
