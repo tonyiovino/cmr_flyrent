@@ -61,7 +61,7 @@ const actions = {
 	deleteCustomer (context, customerId) {
 		return new Promise((resolve, reject) => {
 			db.deleteItem(context, { collectionName: 'customers', itemId: customerId })
-			.then( data => resolve({ msg: 'Veicolo rimosso', ...data }) )
+			.then( data => resolve({ msg: 'Cliente rimosso', ...data }) )
 			.catch( err => reject(err) )
 		})
 	},
@@ -69,7 +69,7 @@ const actions = {
 	editCustomer: (context, { id, ...customer }) => {
 		return new Promise((resolve, reject) => {
 			db.editItem(context, { collectionName: 'customers', id, ...customer })
-			.then( data => resolve({ msg: 'Veicolo aggiornato', ...data }) )
+			.then( data => resolve({ msg: 'Cliente aggiornato', ...data }) )
 			.catch( err => reject(err) )
 		})
 	}
