@@ -1,4 +1,4 @@
-# cmr_flyrent
+# crm_flyrent
 
 ## Project setup
 ```
