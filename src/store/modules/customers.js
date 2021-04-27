@@ -1,3 +1,5 @@
+import db from './db'
+
 const state = {
 	customers: [],
 	// { id: '1', surname: 'Rossi', name: 'Luca', born_date: '23/03/90' },
@@ -25,9 +27,9 @@ const mutations = {
 	},
 
 	set_customers: (state, payload) => {
-        state.customers = payload
-        state.loaded = true
-    },
+		state.customers = payload
+		state.loaded = true
+	},
 
 	addTo_customers (state, payload) {
 		state.customers.push(payload)
@@ -45,12 +47,12 @@ const mutations = {
 
 const actions = {
 	loadCustomers: (context) => {
-		context.dispatch('loadData', 'customers')
+		db.loadData(context, 'customers')
 	},
 
 	addCustomer: (context, customer) => {
 		return new Promise((resolve, reject) => {
-			context.dispatch('addItem', { collectionName: 'customers', item: customer })
+			db.addItem(context, { collectionName: 'customers', item: customer })
 			.then( data => resolve({ msg: 'Cliente aggiunto', ...data }) )
 			.catch( err => reject(err) )
 		})
@@ -58,19 +60,19 @@ const actions = {
 
 	deleteCustomer (context, customerId) {
 		return new Promise((resolve, reject) => {
-			context.dispatch('deleteItem', { collectionName: 'customers', itemId: customerId })
-			.then( data => resolve({ msg: 'Cliente rimosso', ...data }) )
+			db.deleteItem(context, { collectionName: 'customers', itemId: customerId })
+			.then( data => resolve({ msg: 'Veicolo rimosso', ...data }) )
 			.catch( err => reject(err) )
 		})
 	},
 
 	editCustomer: (context, { id, ...customer }) => {
 		return new Promise((resolve, reject) => {
-			context.dispatch('editItem', { collectionName: 'customers', id, ...customer })
-			.then( data => resolve({ msg: 'Cliente aggiornato', ...data }) )
+			db.editItem(context, { collectionName: 'customers', id, ...customer })
+			.then( data => resolve({ msg: 'Veicolo aggiornato', ...data }) )
 			.catch( err => reject(err) )
 		})
-    }
+	}
 }
 
 export default {

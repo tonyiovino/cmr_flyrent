@@ -25,9 +25,9 @@ const mutations = {
 	},
 
 	set_vehicles: (state, payload) => {
-        state.vehicles = payload
-        state.loaded = true
-    },
+		state.vehicles = payload
+		state.loaded = true
+	},
 
 	addTo_vehicles (state, payload) {
 		state.vehicles.push(payload)
@@ -70,7 +70,7 @@ const actions = {
 			.then( data => resolve({ msg: 'Veicolo aggiornato', ...data }) )
 			.catch( err => reject(err) )
 		})
-    }
+	}
 }
 
 export default {

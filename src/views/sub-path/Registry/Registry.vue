@@ -16,6 +16,7 @@
 			></app-input-customer>
 		</template>
 		<app-list>
+			<app-customer />
 			<app-customer v-for="customer in customers" :key="customer.id"
 				:data="customer"
 				@delete="customerDelete"
@@ -40,7 +41,15 @@ export default {
 	computed: {
 		...mapGetters([
 			'customers'
-		])
+		]),
+
+		customerHeader () {
+			return {
+				surname: 'Cognome',
+				name: 'Nome',
+				born_date: 'Data di nascita'
+			}
+		}
 	},
 
 	methods: {
