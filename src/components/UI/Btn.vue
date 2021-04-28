@@ -47,6 +47,8 @@ export default {
 	&--undo {
 		font-size: 4rem;
 		background-color: transparent;
+		margin: 2rem;
+		padding: 0;
 
 		&:hover {
 			background-color: transparent;
