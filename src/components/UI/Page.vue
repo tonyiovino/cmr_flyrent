@@ -32,6 +32,7 @@ export default {
 		width: 60%;
 		margin: 0 auto;
 		margin-bottom: 2rem;
+		background-color: rgba($color-primary-light, .2);
 	}
 
 	&__main {

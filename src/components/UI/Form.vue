@@ -39,7 +39,7 @@
 		font-family: inherit;
 		color: inherit;
 		padding: 1.5rem 2rem;
-		border-radius: 3rem;
+		border-radius: 3px;
 		background-color: rgba($color-primary-dark, .6);
 		border: none;
 		border-bottom: 5px solid transparent;

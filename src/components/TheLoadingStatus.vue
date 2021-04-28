@@ -5,6 +5,10 @@
 				<span class="loading-status__message--text">Caricamento veicoli</span>
 				<span class="loading-status__message--ok" :class="{'loading-status__message--ok--green': vehiclesLoaded}"></span>
 			</div>
+			<div class="loading-status__message">
+				<span class="loading-status__message--text">Caricamento clienti</span>
+				<span class="loading-status__message--ok" :class="{'loading-status__message--ok--green': customersLoaded}"></span>
+			</div>
 		</div>
 	</div>
 </template>
@@ -16,15 +20,12 @@ export default {
 	computed: {
 		...mapGetters([
 			//'loadingStatusNeeded',
-			'vehiclesLoaded'
+			'vehiclesLoaded', 'customersLoaded'
 		]),
 
 		completed () {
-			const result = this.vehiclesLoaded// &&
-			// this.alunniLoaded &&
-			// this.moduliLoaded &&
-			// this.argomentiLoaded &&
-			// this.valutazioniLoaded
+			const result = this.vehiclesLoaded &&
+				this.customersLoaded
 
 			return result
 		}
@@ -51,7 +52,6 @@ export default {
 		width: 40vw;
 		font-weight: 300;
 		font-size: 3rem;
-		color: $color-black;
 		border-radius: 5px;
 		padding: 3rem 5rem;
 

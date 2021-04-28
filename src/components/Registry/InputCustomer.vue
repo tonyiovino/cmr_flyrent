@@ -16,7 +16,7 @@
 				</div>
 
 				<div class="form__group">
-					<input type="text" class="form__input" id="born_date" v-model.trim="born_date" placeholder="Data di nascita" required>
+					<input type="date" class="form__input" id="born_date" v-model.trim="born_date" placeholder="Data di nascita" required>
 					<label for="born_date" class="form__label">Data di nascita</label>
 				</div>
 

@@ -19,6 +19,7 @@
 			<app-customer />
 			<app-customer v-for="customer in customers" :key="customer.id"
 				:data="customer"
+				@clicked="customerClicked"
 				@delete="customerDelete"
 			></app-customer>
 		</app-list>
