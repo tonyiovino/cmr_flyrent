@@ -15,10 +15,8 @@ export default {
 	background-color: $color-primary-dark;
 	border: none;
 	color: $color-white;
-	font-size: 3rem;
-	border-radius: 12px;
-	// font-size: 2rem;
-	// border-radius: 10rem;
+	font-size: 2rem;
+	border-radius: 10rem;
 	padding: 1rem 3rem;
 	cursor: pointer;
 	margin: 1rem;
