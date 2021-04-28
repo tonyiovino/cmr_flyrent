@@ -16,16 +16,16 @@ export default {
 	border: none;
 	color: $color-white;
 	font-size: 3rem;
-	border-radius: 10rem;
+	border-radius: 12px;
 	padding: 1rem 3rem;
 	cursor: pointer;
 	margin: 1rem;
-	
+
 	&:hover {
 		background-color: $color-primary;
 		box-shadow: 0 1rem 2rem rgba($color-black, .8);
 	}
-	
+
 	&:active {
 		box-shadow: 0 .5rem 1rem rgba($color-black, .8);
 	}
@@ -42,6 +42,22 @@ export default {
 
 	&--secondary {
 		background-color: $color-secondary;
+	}
+
+	&--undo {
+		font-size: 4rem;
+		background-color: transparent;
+
+		&:hover {
+			background-color: transparent;
+			box-shadow: none;
+			color: $color-primary;
+		}
+		
+		&:active {
+			color: $color-secondary;
+			box-shadow: none;
+		}
 	}
 }
 </style>

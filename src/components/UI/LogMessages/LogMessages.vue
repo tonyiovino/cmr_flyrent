@@ -42,7 +42,6 @@ export default {
 	position: fixed;
 	right: 1rem;
 	bottom: 1rem;
-	background-color: $color-primary-dark;
 	z-index: 1000;
 	padding: 2rem;
 	min-width: 30vw;
