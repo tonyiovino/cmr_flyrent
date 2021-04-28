@@ -64,6 +64,7 @@ export default {
 		
 		&--text {
 			font-size: 1.8rem;
+			text-align: center;
 		}
 	}
 }

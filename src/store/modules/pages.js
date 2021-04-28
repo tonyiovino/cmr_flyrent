@@ -3,20 +3,55 @@ const state = {
 		{
 			id: '1',
 			title: 'Gestione anagrafica',
-			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem placeat repellendus id odio esse?',
+			text: 'In Work',
 			path: '/anagrafica'
 		},
-		{ id: '2', title: 'Preventivi', path: '/preventivi' },
-		{ id: '3', title: 'Scoring', path: '/scoring' },
-		{ id: '4', title: 'Ordini in corso', path: '/ordini' },
-		{ id: '5', title: 'Gestione contratti', path: '/contratti' },
-		{ id: '6', title: 'Modulistica', path: '/modulistica' },
-		{ id: '7', title: 'Comunicazioni', path: '/comunicazioni' },
-		{ id: '8', title: 'Note', path: '/note' },
+		{
+			id: '2',
+			title: 'Preventivi',
+			text: 'Empty',
+			path: '/preventivi'
+		},
+		{
+			id: '3',
+			title: 'Scoring',
+			text: 'Empty',
+			path: '/scoring'
+		},
+		{
+			id: '4',
+			title: 'Ordini in corso',
+			text: 'Empty',
+			path: '/ordini'
+		},
+		{
+			id: '5',
+			title: 'Gestione contratti',
+			text: 'Empty',
+			path: '/contratti'
+		},
+		{
+			id: '6',
+			title: 'Modulistica',
+			text: 'Empty',
+			path: '/modulistica'
+		},
+		{
+			id: '7',
+			title: 'Comunicazioni',
+			text: 'Empty',
+			path: '/comunicazioni'
+		},
+		{
+			id: '8',
+			title: 'Note',
+			text: 'Empty',
+			path: '/note'
+		},
 		{ 
 			id: '9',
 			title: 'Gestione veicoli',
-			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem placeat repellendus id odio esse?',
+			text: 'In Work',
 			path: '/vehicles'
 		}
 	]
