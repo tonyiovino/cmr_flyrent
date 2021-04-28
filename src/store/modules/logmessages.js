@@ -26,7 +26,7 @@ const actions = {
 	addLogMessage: (context, msg) => {
 		const msgId = state.nextId
 		context.commit('addLogMessage', { id: msgId, msg: msg })
-		setTimeout(() => context.commit('removeLogMessage', msgId), 1177653000)
+		setTimeout(() => context.commit('removeLogMessage', msgId), 3000)
 	},
 
 	removeLogMessage: (context, msgId) => {
