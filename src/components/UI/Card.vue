@@ -20,12 +20,11 @@ export default {
 .card {
 	background: $color-primary;
 	color: $color-white;
-	margin: 2rem;
-	text-align: center;
+	margin: 0 2rem 2rem;
 	border-radius: 2px;
 	padding-bottom: 1rem;
-	min-height: 20vh;
 	cursor: pointer;
+	transition: all .2s;
 
 	animation: moveInLeft 1s ease-out;
 	
@@ -33,14 +32,13 @@ export default {
 		color: $color-white;
 		background-color: $color-secondary;
 
-		box-shadow: 0 1rem 2rem #00000033;
+		box-shadow: 0 1rem 2rem rgba($color-black, .8);
 		transform: translateY(-4px);
-		transition: all .1s;
 	}
 
 	&:active {
+		box-shadow: 0 .5rem 1rem rgba($color-black, .8);
 		transform: translateY(-1px);
-		box-shadow: 0 .5rem 1rem #00000033;
 	}
 
 	&__header {
@@ -49,19 +47,23 @@ export default {
 		img {
 			border-top-left-radius: 2px;
 			border-top-right-radius: 2px;
+			width: 100%;
 		}
 	}
 
 	&__body {
 		display: flex;
 		flex-direction: column;
+		padding-left: 1rem;
+		padding-right: 1rem;
 		
 		&--title {
-			font-size: 2rem;
+			font-size: 2.4rem;
+			text-align: center;
 		}
 		
 		&--text {
-			font-size: 1.4rem;
+			font-size: 1.8rem;
 		}
 	}
 }

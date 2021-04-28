@@ -32,7 +32,8 @@ export default {
 .home-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	justify-items: center;
-	align-items: center;
+	grid-template-rows: repeat(3, 1fr);
+	justify-items: stretch;
+	align-items: stretch;
 }
 </style>

@@ -62,7 +62,6 @@ body {
 	background-color: $color-grey-light;
 	background-image: linear-gradient(to bottom, rgba($color-primary-light, 0.8), rgba($color-secondary-light, 0.8));
 
-
 	position: relative;
 
 	&__nav {

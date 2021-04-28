@@ -1,6 +1,8 @@
 <template>
-	<div class="vehicle list-item" :class="{ 'list-item--header': isHeader }" @click="$emit('clicked', ext_data.id)">
-		<span class="vehicle__data list-item__data">
+	<!-- <div class="vehicle list-item" :class="{ 'list-item--header': isHeader }" @click="$emit('clicked', ext_data.id)"> -->
+	<app-list-item :isHeader="isHeader" @click="$emit('clicked', ext_data.id)">
+		<template v-slot:data>
+		<!-- <span class="vehicle__data list-item__data"> -->
 			<span class="vehicle__data--brand">
 				{{ ext_data.brand }}
 			</span>
@@ -10,11 +12,15 @@
 			<span class="vehicle__data--license-plate">
 				{{ ext_data.license_plate }}
 			</span>
-		</span>
-		<span class="vehicle__actions list-item__actions">
+		<!-- </span> -->
+		</template>
+		<template v-slot:actions>
+		<!-- <span class="vehicle__actions list-item__actions"> -->
 			<app-btn className="btn--flat" @click="$emit('delete', ext_data.id)">&times;</app-btn>
-		</span>
-	</div>
+		<!-- </span> -->
+		</template>
+	</app-list-item>
+	<!-- </div> -->
 </template>
 
 <script>

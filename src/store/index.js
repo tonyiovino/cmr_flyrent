@@ -17,6 +17,7 @@ export default new Vuex.Store({
 	actions: {
 		loadInitialData: ({ dispatch }) => {
 			dispatch('loadVehicles')
+			dispatch('loadCustomers')
 		}
 	},
 	modules: {
