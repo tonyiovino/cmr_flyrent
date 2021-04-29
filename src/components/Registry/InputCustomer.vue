@@ -66,7 +66,7 @@ export default {
 				name: this.name,
 				born_date: this.born_date
 			})
-			
+
 			this.surname = this.name = this.born_date = ''
 
 			this.addLogMessage('Salvataggio in corso')

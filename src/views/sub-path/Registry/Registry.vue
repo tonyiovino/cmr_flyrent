@@ -3,9 +3,8 @@
 		<template v-slot:header>
 			<h1 class="heading-primary">Gestione anagrafica</h1>
 		</template>
-		
 		<!--<app-btn class="btn--add" @click="ok">+</app-btn>
-		
+
 			I templata va sopra al pulsante, e poi pensavo
 			che non funzionasse con v-show
 		-->
