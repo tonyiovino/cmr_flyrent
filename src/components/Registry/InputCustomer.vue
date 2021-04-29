@@ -19,7 +19,6 @@
 					<input type="date" class="form__input" id="born_date" v-model.trim="born_date" placeholder="Data di nascita" required>
 					<label for="born_date" class="form__label">Data di nascita</label>
 				</div>
-
 			</div>
 
 			<div class="form__actions">
@@ -29,12 +28,11 @@
 				<app-btn class="btn--secondary" v-else type="reset">Pulisci</app-btn>
 			</div>
 		</app-form>
-
 	</div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
 	props: [ 'id' ],
@@ -54,6 +52,10 @@ export default {
 	},
 
 	methods: {
+		...mapActions([
+			'addLogMessage'
+		]),
+
 		submit () {
 
 			if (this.surname === '' || this.name === '' || this.born_date === '') return
@@ -66,6 +68,8 @@ export default {
 			})
 			
 			this.surname = this.name = this.born_date = ''
+
+			this.addLogMessage('Salvataggio in corso')
 		}
 	},
 
