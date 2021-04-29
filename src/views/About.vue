@@ -1,5 +1,5 @@
 <template>
-  <app-page>
-    <h1>This is an about page</h1>
-  </app-page>
+	<app-page>
+		<h1>This is an about page</h1>
+	</app-page>
 </template>

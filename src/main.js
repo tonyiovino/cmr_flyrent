@@ -25,7 +25,7 @@ Vue.component('appBtn', Btn)
 Vue.component('appTextLink', TextLink)
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+	router,
+	store,
+	render: h => h(App)
 }).$mount('#app')
