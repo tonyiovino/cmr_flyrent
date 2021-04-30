@@ -1,5 +1,7 @@
 <template>
 	<app-page>
-		<h1>Modulistica</h1>
+		<template v-slot:header>
+			<h1 class="heading-primary">Modulistica</h1>
+		</template>
 	</app-page>
 </template>

@@ -1,5 +1,7 @@
 <template>
 	<app-page>
-		<h1>Preventivi</h1>
+		<template v-slot:header>
+			<h1 class="heading-primary">Preventivi</h1>
+		</template>
 	</app-page>
 </template>

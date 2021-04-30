@@ -1,5 +1,7 @@
 <template>
 	<app-page>
-		<h1>Ordini in corso</h1>
+		<template v-slot:header>
+			<h1 class="heading-primary">Ordini in corso</h1>
+		</template>
 	</app-page>
 </template>

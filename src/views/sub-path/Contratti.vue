@@ -1,5 +1,7 @@
 <template>
 	<app-page>
-		<h1>Gestione contratti</h1>
+		<template v-slot:header>
+			<h1 class="heading-primary">Gestione contratti</h1>
+		</template>
 	</app-page>
 </template>

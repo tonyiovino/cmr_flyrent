@@ -1,5 +1,7 @@
 <template>
 	<app-page>
-		<h1>This is an about page</h1>
+		<template v-slot:header>
+			<h1 class="heading-primary">This is an about page</h1>
+		</template>
 	</app-page>
 </template>

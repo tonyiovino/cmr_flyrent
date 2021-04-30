@@ -26,7 +26,7 @@ export default {
 	cursor: pointer;
 	transition: all .2s;
 
-	animation: moveInLeft 1s ease-out;
+	// animation: moveInLeft 1s ease-out;
 	
 	&:hover {
 		color: $color-white;
