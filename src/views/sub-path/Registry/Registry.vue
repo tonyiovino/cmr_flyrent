@@ -3,14 +3,14 @@
 		<template v-slot:header>
 			<h1 class="heading-primary">Gestione anagrafica</h1>
 		</template>
-		<!--<app-btn class="btn--add" @click="ok">+</app-btn>
+		<app-btn class="btn--add" @click="ok">+</app-btn>
 
-			I templata va sopra al pulsante, e poi pensavo
+		<!--I template va sopra al pulsante, e poi pensavo
 			che non funzionasse con v-show
 		-->
 		<template v-slot:input>
-			<!-- <app-input-customer v-show="shoow" -->
-			<app-input-customer
+			<!-- <app-input-customer > -->
+			<app-input-customer v-show="shoow"
 				@save="customerSave"
 			></app-input-customer>
 		</template>
@@ -32,11 +32,11 @@ import InputCustomer from '@/components/Registry/InputCustomer.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-	// data (){
-	// 	return {
-	// 		shoow: false
-	// 	}
-	// },
+	data (){
+		return {
+			shoow: false
+		}
+	},
 
 	computed: {
 		...mapGetters([
@@ -80,9 +80,9 @@ export default {
 				this.addError(err.err)
 			})
 		},
-		// ok () {
-		// 	this.shoow = !this.shoow
-		// }
+		ok () {
+			this.shoow = !this.shoow
+		}
 	},
 
 	components: {
