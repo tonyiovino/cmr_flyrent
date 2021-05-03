@@ -3,17 +3,14 @@
 		<template v-slot:header>
 			<h1 class="heading-primary">Gestione anagrafica</h1>
 		</template>
-		<app-btn class="btn--add" @click="ok">+</app-btn>
 
-		<!--I template va sopra al pulsante, e poi pensavo
-			che non funzionasse con v-show
-		-->
 		<template v-slot:input>
-			<!-- <app-input-customer > -->
+			<app-btn class="btn--add" @click="ok">+</app-btn>
 			<app-input-customer v-show="shoow"
 				@save="customerSave"
 			></app-input-customer>
 		</template>
+
 		<app-list>
 			<app-customer />
 			<app-customer v-for="customer in customers" :key="customer.id"
