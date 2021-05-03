@@ -5,7 +5,9 @@
 		</template>
 
 		<template v-slot:input>
-			<app-btn class="btn--add" @click="ok">+</app-btn>
+			<div class="btn--add__box">
+				<app-btn class="btn--add" @click="shoow = !shoow">+</app-btn>
+			</div>
 			<app-input-customer v-show="shoow"
 				@save="customerSave"
 			></app-input-customer>
@@ -77,9 +79,6 @@ export default {
 				this.addError(err.err)
 			})
 		},
-		ok () {
-			this.shoow = !this.shoow
-		}
 	},
 
 	components: {

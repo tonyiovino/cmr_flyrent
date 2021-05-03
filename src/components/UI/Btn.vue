@@ -55,10 +55,20 @@ export default {
 			box-shadow: none;
 			color: $color-primary;
 		}
-		
+
 		&:active {
 			color: $color-secondary;
 			box-shadow: none;
+		}
+	}
+
+	&--add {
+		padding: 1rem 4rem;
+
+		&__box {
+			display: flex;
+			flex-direction: row;
+			justify-content: right;
 		}
 	}
 }
