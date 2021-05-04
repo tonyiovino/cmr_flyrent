@@ -6,9 +6,10 @@
 
 		<template v-slot:input>
 			<div class="btn--add__box">
-				<app-btn class="btn--add" @click="shoow = !shoow">+</app-btn>
+				<app-btn class="btn--add" @click="show=!show" v-if="!show">+</app-btn>
+				<app-btn class="btn--add" @click="show=!show" v-else>-</app-btn>
 			</div>
-			<app-input-customer v-show="shoow"
+			<app-input-customer v-show="show"
 				@save="customerSave"
 			></app-input-customer>
 		</template>
@@ -33,7 +34,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
 	data (){
 		return {
-			shoow: false
+			show: false
 		}
 	},
 
