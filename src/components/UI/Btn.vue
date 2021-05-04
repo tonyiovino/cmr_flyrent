@@ -20,14 +20,17 @@ export default {
 	padding: 1rem 3rem;
 	cursor: pointer;
 	margin: 1rem;
+	transform: translateY(-1px);
+	transition: all .2s;
 
 	&:hover {
-		background-color: $color-primary;
-		box-shadow: 0 1rem 2rem rgba($color-black, .8);
+		box-shadow: 0 .5rem 1rem rgba($color-black, .8);
+		transform: translateY(-3px);
 	}
 
 	&:active {
-		box-shadow: 0 .5rem 1rem rgba($color-black, .8);
+		box-shadow: 0 .2rem .2rem rgba($color-black, .8);
+		transform: translateY(-1px);
 	}
 
 	&--flat {
