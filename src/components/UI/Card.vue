@@ -1,7 +1,7 @@
 <template>
 	<div class="card" @click="$router.push(data.path)">
 		<div class="card__header">
-			<img :src="'https://picsum.photos/id/'+ data.id + '/200/100'">
+			<img :src="'/img/icon-'+ data.name + '.png'">
 		</div>
 		<div class="card__body">
 			<span class="card__body--title">{{ data.title }}</span>
@@ -22,7 +22,7 @@ export default {
 	color: $color-white;
 	margin: 0 2rem 2rem;
 	border-radius: 2px;
-	padding-bottom: 1rem;
+	padding: 1rem;
 	cursor: pointer;
 	transition: all .2s;
 
@@ -42,20 +42,21 @@ export default {
 	}
 
 	&__header {
-		margin-bottom: 1rem;
+		border-bottom: solid $color-white 1px;
+		display: flex;
+		justify-content: center;
 
 		img {
 			border-top-left-radius: 2px;
 			border-top-right-radius: 2px;
-			width: 100%;
+			width: 50%;
+			padding: 2rem;
 		}
 	}
 
 	&__body {
 		display: flex;
 		flex-direction: column;
-		padding-left: 1rem;
-		padding-right: 1rem;
 		
 		&--title {
 			font-size: 2.4rem;

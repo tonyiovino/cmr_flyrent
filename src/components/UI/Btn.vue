@@ -47,24 +47,6 @@ export default {
 		background-color: $color-secondary;
 	}
 
-	&--undo {
-		font-size: 4rem;
-		background-color: transparent;
-		margin: 2rem;
-		padding: 0;
-
-		&:hover {
-			background-color: transparent;
-			box-shadow: none;
-			color: $color-primary;
-		}
-
-		&:active {
-			color: $color-secondary;
-			box-shadow: none;
-		}
-	}
-
 	&--add {
 		padding: 1rem 4rem;
 

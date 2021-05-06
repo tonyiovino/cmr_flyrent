@@ -44,6 +44,6 @@ export default {
 	bottom: 1rem;
 	z-index: 1000;
 	padding: 2rem;
-	min-width: 30vw;
+	min-width: 20vw;
 }
 </style>

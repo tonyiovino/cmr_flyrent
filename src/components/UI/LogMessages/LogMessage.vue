@@ -1,8 +1,6 @@
 <template>
 	<div class="log-message" @click="markRead">
 		{{msg.id }}) {{ msg.msg }}
-		<!-- Tasto per annullare la modifica. "Undo" -->
-		<app-btn class="btn btn--undo">&crarr;</app-btn>
 	</div>
 </template>
 
