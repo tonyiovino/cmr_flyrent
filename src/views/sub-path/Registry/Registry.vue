@@ -58,7 +58,7 @@ export default {
 		]),
 
 		customerClicked (customerId) {
-			this.$router.push('/customers/' + customerId)
+			this.$router.push('/registry/' + customerId)
 		},
 
 		customerDelete (customerId) {

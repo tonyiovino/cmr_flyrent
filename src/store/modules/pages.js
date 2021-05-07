@@ -5,7 +5,7 @@ const state = {
 			name: 'registry',
 			title: 'Gestione anagrafica',
 			text: 'In Work',
-			path: '/anagrafica'
+			path: '/registry'
 		},
 		{
 			id: '2',

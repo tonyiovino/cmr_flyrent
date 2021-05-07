@@ -12,6 +12,8 @@ import Modulistica from '../views/sub-path/Modulistica.vue'
 import Comunicazioni from '../views/sub-path/Comunicazioni.vue'
 import Note from '../views/sub-path/Note.vue'
 import Vehicles from '../views/sub-path/Vehicles/Vehicles.vue'
+
+import EditCustomer from '../views/sub-path/Registry/EditCustomer.vue'
 import EditVehicle from '../views/sub-path/Vehicles/EditVehicle.vue'
 
 Vue.use(VueRouter)
@@ -23,7 +25,7 @@ const routes = [
 		component: Home
 	},
 	{
-		path: '/anagrafica',
+		path: '/registry',
 		name: 'Gestione Anagrafica',
 		component: Registry
 	},
@@ -66,6 +68,11 @@ const routes = [
 		path: '/vehicles',
 		name: 'Vehicles',
 		component: Vehicles
+	},
+	{
+		path: '/registry/:id',
+		name: 'EditCustomer',
+		component: EditCustomer
 	},
 	{
 		path: '/vehicles/:id',
