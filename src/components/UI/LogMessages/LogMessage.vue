@@ -23,7 +23,7 @@ export default {
 	background-color: rgba($color-black, 0.4);
 	border-radius: 12px;
 	word-spacing: 1rem;
-	padding: 0 1rem;
+	padding: 1rem;
 	animation: moveInRight 1s ease-out;
 	display: flex;
 	justify-content: space-between;

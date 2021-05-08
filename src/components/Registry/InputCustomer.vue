@@ -24,7 +24,7 @@
 			<div class="form__actions">
 				<app-btn class="btn--primary" type="submit">Salva</app-btn>
 
-				<app-text-link v-if="id" path="/anagrafica">Annulla</app-text-link>
+				<app-text-link v-if="id" path="/registry">Annulla</app-text-link>
 				<app-btn class="btn--secondary" v-else type="reset">Pulisci</app-btn>
 			</div>
 		</app-form>
