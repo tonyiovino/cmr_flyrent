@@ -6,18 +6,23 @@
 		<app-form @submit="submit">
 			<div class="form__row">
 				<div class="form__group">
-					<input type="text" class="form__input" id="surname" v-model="surname" placeholder="Cognome" required>
-					<label for="surname" class="form__label">Cognome</label>
+					<input type="text" class="form__input" id="name" v-model.trim="name" placeholder="Cliente" required>
+					<label for="name" class="form__label">Cliente</label>
 				</div>
 
 				<div class="form__group">
-					<input type="text" class="form__input" id="name" v-model.trim="name" placeholder="Nome" required>
-					<label for="name" class="form__label">Nome</label>
+					<input type="text" class="form__input" id="iva_cf" v-model.trim="iva_cf" placeholder="P.Iva" required>
+					<label for="iva_cf" class="form__label">P.Iva</label>
 				</div>
 
 				<div class="form__group">
-					<input type="date" class="form__input" id="born_date" v-model.trim="born_date" placeholder="Data di nascita" required>
-					<label for="born_date" class="form__label">Data di nascita</label>
+					<input type="email" class="form__input" id="email" v-model.trim="email" placeholder="Email" required>
+					<label for="email" class="form__label">Email</label>
+				</div>
+
+				<div class="form__group">
+					<input type="tel" class="form__input" id="tel" v-model.trim="tel" placeholder="Tel." required>
+					<label for="tel" class="form__label">Tel.</label>
 				</div>
 			</div>
 
@@ -45,9 +50,10 @@ export default {
 
 	data () {
 		return {
-			surname: '',
 			name: '',
-			born_date: ''
+			iva_cf: '',
+			email: '',
+			tel: ''
 		}
 	},
 
@@ -58,16 +64,17 @@ export default {
 
 		submit () {
 
-			if (this.surname === '' || this.name === '' || this.born_date === '') return
+			if (this.name === '' || this.iva_cf === '' || this.email === '' || this.tel === '') return
 
 			this.$emit('save', {
 				id: this.id,
-				surname: this.surname,
 				name: this.name,
-				born_date: this.born_date
+				iva_cf: this.iva_cf,
+				email: this.email,
+				tel: this.tel
 			})
 
-			this.surname = this.name = this.born_date = ''
+			this.name = this.iva_cf = this.email = this.tel = ''
 
 			this.addLogMessage('Salvataggio in corso')
 		}
@@ -76,9 +83,10 @@ export default {
 	created () {
 		if (this.id) {
 			const customer = this.customerById(this.id)
-			this.surname = customer.surname
 			this.name = customer.name
-			this.born_date = customer.born_date
+			this.iva_cf = customer.iva_cf
+			this.email = customer.email
+			this.tel = customer.tel
 		}
 	}
 }

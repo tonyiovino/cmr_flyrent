@@ -9,9 +9,9 @@
 				<app-btn class="btn--add" @click="show=!show" v-if="!show">+</app-btn>
 				<app-btn class="btn--add" @click="show=!show" v-else>-</app-btn>
 			</div>
-			<app-input-customer v-show="show"
+			<app-input-customer-private v-show="show"
 				@save="customerSave"
-			></app-input-customer>
+			></app-input-customer-private>
 		</template>
 
 		<app-list>
@@ -27,7 +27,7 @@
 
 <script>
 import Customer from '@/components/Registry/Customer.vue'
-import InputCustomer from '@/components/Registry/InputCustomer.vue'
+import InputCustomerPrivate from '@/components/Registry/InputCustomerPrivate.vue'
 
 import { mapGetters, mapActions } from 'vuex'
 
@@ -45,9 +45,10 @@ export default {
 
 		customerHeader () {
 			return {
-				surname: 'Cognome',
-				name: 'Nome',
-				born_date: 'Data di nascita'
+				name: 'Cliente',
+				iva_cf: 'P.Iva/C.F.',
+				email: 'Email',
+				tel: 'Tel.'
 			}
 		}
 	},
@@ -84,7 +85,7 @@ export default {
 
 	components: {
 		appCustomer: Customer,
-		appInputCustomer: InputCustomer
+		appInputCustomerPrivate: InputCustomerPrivate
 	}
 }
 </script>

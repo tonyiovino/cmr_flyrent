@@ -5,22 +5,22 @@
 		</template>
 
 		<template v-slot:input>
-			<app-input-customer
+			<app-input-customer-private
 				:id="$route.params.id"
 				@save="customerSave"
-			></app-input-customer>
+			></app-input-customer-private>
 		</template>
 	</app-page>
 </template>
 
 <script>
-import InputCustomer from '@/components/Registry/InputCustomer.vue'
+import InputCustomerPrivate from '@/components/Registry/InputCustomerPrivate.vue'
 
 import { mapActions } from 'vuex'
 
 export default {
 	components: {
-		appInputCustomer: InputCustomer
+		appInputCustomerPrivate: InputCustomerPrivate
 	},
 
 	methods: {

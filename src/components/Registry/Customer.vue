@@ -2,13 +2,16 @@
 	<app-list-item :isHeader="isHeader" @click="$emit('clicked', ext_data.id)">
 		<template v-slot:data>
 			<span class="customer__data">
-				{{ ext_data.surname }}
-			</span>
-			<span class="customer__data">
 				{{ ext_data.name }}
 			</span>
 			<span class="customer__data">
-				{{ ext_data.born_date }}
+				{{ ext_data.iva_cf }}
+			</span>
+			<span class="customer__data">
+				{{ ext_data.email }}
+			</span>
+			<span class="customer__data">
+				{{ ext_data.tel }}
 			</span>
 		</template>
 		<template v-slot:actions>
@@ -31,9 +34,10 @@ export default {
 	created () {
 		if (!this.data) {
 			this.ext_data = {}
-			this.ext_data.surname = 'Cognome'
-			this.ext_data.name = 'Nome'
-			this.ext_data.born_date = 'Data di nascita'
+			this.ext_data.name = 'Cliente'
+			this.ext_data.iva_cf = 'P.Iva/C.F.'
+			this.ext_data.email = 'Email'
+			this.ext_data.tel = 'Tel.'
 			this.isHeader = true
 		}
 	}
@@ -42,5 +46,8 @@ export default {
 
 <style lang="scss">
 .customer {
+	&__data{
+		text-align: center;
+	}
 }
 </style>

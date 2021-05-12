@@ -38,7 +38,7 @@ export default {
 		font-weight: 400;
 		width: 100%;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
 
 	&__actions {
