@@ -1,7 +1,7 @@
 <template>
-	<div class="input input--private">
-		<h2 class="heading-secondary" v-if="id">Modifica Cliente Privato</h2>
-		<h2 class="heading-secondary" v-else>Nuovo Cliente Privato</h2>
+	<div class="input input--company">
+		<h2 class="heading-secondary" v-if="id">Modifica Cliente Aziendale</h2>
+		<h2 class="heading-secondary" v-else>Nuovo Cliente Aziendale</h2>
 
 		<app-form @submit="submit">
 			<div class="form__row">

@@ -4,16 +4,13 @@
 			<h1 class="heading-primary">Gestione anagrafica</h1>
 		</template>
 
-		<template v-slot:input>
-			<div class="btn--add__box">
-				<app-btn class="btn--add" @click="show=!show" v-if="!show">+</app-btn>
-				<app-btn class="btn--add" @click="show=!show" v-else>-</app-btn>
-			</div>
-			<app-input-customer-private v-show="show"
+		<!-- <template v-slot:input>
+			<app-input-customer-private
 				@save="customerSave"
 			></app-input-customer-private>
-		</template>
-
+		</template> -->
+		<div class="actions-cards">
+		</div>
 		<app-list>
 			<app-customer />
 			<app-customer v-for="customer in customers" :key="customer.id"
@@ -27,16 +24,11 @@
 
 <script>
 import Customer from '@/components/Registry/Customer.vue'
-import InputCustomerPrivate from '@/components/Registry/InputCustomerPrivate.vue'
+// import InputCustomerPrivate from '@/components/Registry/InputCustomerPrivate.vue'
 
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-	data (){
-		return {
-			show: false
-		}
-	},
 
 	computed: {
 		...mapGetters([
@@ -85,7 +77,7 @@ export default {
 
 	components: {
 		appCustomer: Customer,
-		appInputCustomerPrivate: InputCustomerPrivate
+		// appInputCustomerPrivate: InputCustomerPrivate
 	}
 }
 </script>
