@@ -56,18 +56,35 @@ const state = {
 			text: 'Empty',
 			path: '/note'
 		},
-		{ 
+		{
 			id: '9',
 			name: 'vehicles',
 			title: 'Gestione veicoli',
 			text: 'In Work',
 			path: '/vehicles'
+		},
+	],
+	sub_pages: [
+		{
+			id: '1',
+			name: 'customer_private',
+			title: 'Privato',
+			text: 'In Work',
+			path: '/private'
+		},
+		{
+			id: '2',
+			name: 'customer_company',
+			title: 'Azienda',
+			text: 'In Work',
+			path: '/company'
 		}
 	]
 }
 
 const getters = {
-	pages: state => state.pages
+	pages: state => state.pages,
+	sub_pages: state => state.sub_pages
 }
 
 export default {

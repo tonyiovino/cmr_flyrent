@@ -3,6 +3,8 @@
 		<template v-slot:header>
 			<h1 class="heading-primary">Gestione veicoli</h1>
 		</template>
+		<!-- Bisogna cambiare name, input -> actions  -->
+		<!-- Altrimenti non lo visualizza -->
 		<template v-slot:input>
 			<app-input-vehicle
 				@save="vehicleSave"

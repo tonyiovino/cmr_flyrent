@@ -3,8 +3,8 @@
 		<header class="page__header">
 			<slot name="header"></slot>
 		</header>
-		<section class="page__input">
-			<slot name="input"></slot>
+		<section class="page__actions">
+			<slot name="actions"></slot>
 		</section>
 		<main class="page__main">
 			<slot></slot>
@@ -18,7 +18,6 @@ export default {
 }
 </script>
 
-
 <style lang="scss">
 .page {
 	min-height: 100vh;
@@ -29,7 +28,7 @@ export default {
 		animation: moveInRight 1s ease-out;
 	}
 
-	&__input {
+	&__actions {
 		width: 60%;
 		margin: 0 auto;
 		margin-bottom: 2rem;

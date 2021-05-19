@@ -1,5 +1,5 @@
 <template>
-	<div class="card" @click="$router.push(data.path)">
+	<div class="card" :class="className" @click="$router.push(data.path)">
 		<div class="card__header">
 			<img :src="'/img/icon-'+ data.name + '.png'">
 		</div>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-	props: [ 'data' ]
+	props: [ 'data', 'className' ]
 }
 </script>
 

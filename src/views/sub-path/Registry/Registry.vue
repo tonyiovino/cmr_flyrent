@@ -10,7 +10,9 @@
 			></app-input-customer-private>
 		</template> -->
 		<div class="actions-cards">
+			<app-text-link path="/choose_type">Aggiungi cliente</app-text-link>
 		</div>
+
 		<app-list>
 			<app-customer />
 			<app-customer v-for="customer in customers" :key="customer.id"
