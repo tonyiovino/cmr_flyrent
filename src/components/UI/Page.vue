@@ -34,15 +34,11 @@ export default {
 		margin: 0 auto;
 		margin-bottom: 2rem;
 		background-color: rgba($color-primary-light, .2);
-
-		animation: moveInLeft 1s ease-out;
 	}
 
 	&__main {
 		width: 60%;
 		margin: 0 auto;
-		
-		animation: moveInBottom 1s ease-out;
 	}
 }
 </style>
