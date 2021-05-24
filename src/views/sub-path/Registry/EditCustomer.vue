@@ -4,12 +4,10 @@
 			<h1 class="heading-primary">Gestione anagrafica</h1>
 		</template>
 
-		<template v-slot:input>
-			<app-input-customer-private
-				:id="$route.params.id"
-				@save="customerSave"
-			></app-input-customer-private>
-		</template>
+		<app-input-customer-private
+			:id="$route.params.id"
+			@save="customerSave"
+		></app-input-customer-private>
 	</app-page>
 </template>
 

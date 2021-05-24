@@ -4,13 +4,13 @@
 			<h1 class="heading-primary">Gestione anagrafica</h1>
 		</template>
 
-		<!-- <template v-slot:input>
+		<template v-slot:input>
 			<app-input-customer-private
 				@save="customerSave"
 			></app-input-customer-private>
-		</template> -->
+		</template>
 		<div class="actions-cards">
-			<app-text-link path="/choose_type">Aggiungi cliente</app-text-link>
+			<app-text-link path="/input_customer">Aggiungi cliente</app-text-link>
 		</div>
 
 		<app-list>
@@ -26,7 +26,7 @@
 
 <script>
 import Customer from '@/components/Registry/Customer.vue'
-// import InputCustomerPrivate from '@/components/Registry/InputCustomerPrivate.vue'
+import InputCustomerPrivate from '@/components/Registry/InputCustomerPrivate.vue'
 
 import { mapGetters, mapActions } from 'vuex'
 
@@ -79,7 +79,7 @@ export default {
 
 	components: {
 		appCustomer: Customer,
-		// appInputCustomerPrivate: InputCustomerPrivate
+		appInputCustomerPrivate: InputCustomerPrivate
 	}
 }
 </script>

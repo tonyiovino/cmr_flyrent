@@ -16,7 +16,7 @@ import Vehicles from '../views/sub-path/Vehicles/Vehicles.vue'
 import EditCustomer from '../views/sub-path/Registry/EditCustomer.vue'
 import EditVehicle from '../views/sub-path/Vehicles/EditVehicle.vue'
 
-import ChooseCustomerType from '../views/sub-path/Registry/ChooseCustomerType.vue'
+import InputCustomer from '../views/sub-path/Registry/InputCustomer.vue'
 
 Vue.use(VueRouter)
 
@@ -82,9 +82,9 @@ const routes = [
 		component: EditVehicle
 	},
 	{
-		path: '/choose_type',
-		name: 'ChooseCustomerType',
-		component: ChooseCustomerType
+		path: '/input_customer',
+		name: 'InputCustomer',
+		component: InputCustomer
 	},
 	// {
 	// 	path: '/about',
