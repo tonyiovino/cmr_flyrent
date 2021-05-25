@@ -11,8 +11,8 @@
 				</div>
 
 				<div class="form__group">
-					<input type="text" class="form__input" id="iva_cf" v-model.trim="iva_cf" placeholder="P.Iva" required>
-					<label for="iva_cf" class="form__label">P.Iva</label>
+					<input type="text" class="form__input" id="cf" v-model.trim="iva_cf" placeholder="C.F." required>
+					<label for="cf" class="form__label">C.F.</label>
 				</div>
 
 				<div class="form__group">
@@ -51,7 +51,7 @@ export default {
 	data () {
 		return {
 			name: '',
-			iva_cf: '',
+			cf: '',
 			email: '',
 			tel: ''
 		}
@@ -64,17 +64,17 @@ export default {
 
 		submit () {
 
-			if (this.name === '' || this.iva_cf === '' || this.email === '' || this.tel === '') return
+			if (this.name === '' || this.cf === '' || this.email === '' || this.tel === '') return
 
 			this.$emit('save', {
 				id: this.id,
 				name: this.name,
-				iva_cf: this.iva_cf,
+				cf: this.cf,
 				email: this.email,
 				tel: this.tel
 			})
 
-			this.name = this.iva_cf = this.email = this.tel = ''
+			this.name = this.cf = this.email = this.tel = ''
 
 			this.addLogMessage('Salvataggio in corso')
 		}
@@ -84,7 +84,7 @@ export default {
 		if (this.id) {
 			const customer = this.customerById(this.id)
 			this.name = customer.name
-			this.iva_cf = customer.iva_cf
+			this.cf = customer.cf
 			this.email = customer.email
 			this.tel = customer.tel
 		}
