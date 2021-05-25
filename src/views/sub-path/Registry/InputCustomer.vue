@@ -4,7 +4,8 @@
 			<h1 class="heading-primary">Tipo del nuovo cliente</h1>
 		</template>
 
-		<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+		<!-- To do: Rename classes and to be a component -->
+		<div class="btn-group" role="group">
 			<input type="radio" class="btn-check" name="private" id="private" v-model="type" value="private" autocomplete="off" checked>
 			<label class="btn btn-outline-primary" for="private">Privato</label>
 

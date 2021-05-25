@@ -46,15 +46,5 @@ export default {
 	&--secondary {
 		background-color: $color-secondary;
 	}
-
-	&--add {
-		padding: 1rem 4rem;
-
-		&__box {
-			display: flex;
-			flex-direction: row;
-			justify-content: right;
-		}
-	}
 }
 </style>
