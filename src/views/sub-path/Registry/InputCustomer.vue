@@ -27,7 +27,7 @@
 import InputCustomerCompany from '@/components/Registry/InputCustomerCompany.vue'
 import InputCustomerPrivate from '@/components/Registry/InputCustomerPrivate.vue'
 
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
 	name: 'InputCustomer',
@@ -39,6 +39,10 @@ export default {
 	},
 
 	computed: {
+		...mapGetters([
+			'customers'
+		]),
+
 		isPrivate () {
 			return this.type === 'private'
 		}

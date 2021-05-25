@@ -5,7 +5,7 @@
 				{{ ext_data.name }}
 			</span>
 			<span class="customer__data">
-				{{ ext_data.iva_cf }}
+				{{ ext_data.iva }}{{ ext_data.cf }}
 			</span>
 			<span class="customer__data">
 				{{ ext_data.email }}
@@ -35,7 +35,10 @@ export default {
 		if (!this.data) {
 			this.ext_data = {}
 			this.ext_data.name = 'Cliente'
-			this.ext_data.iva_cf = 'P.Iva/C.F.'
+			this.ext_data.iva_cf = [
+				this.ext_data.iva = 'P.Iva',
+				this.ext_data.cf = '/C.F.'
+			]
 			this.ext_data.email = 'Email'
 			this.ext_data.tel = 'Tel.'
 			this.isHeader = true

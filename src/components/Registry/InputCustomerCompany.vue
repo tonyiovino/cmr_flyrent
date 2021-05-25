@@ -11,7 +11,7 @@
 				</div>
 
 				<div class="form__group">
-					<input type="text" class="form__input" id="cf" v-model.trim="iva_cf" placeholder="C.F." required>
+					<input type="text" class="form__input" id="cf" v-model.trim="cf" placeholder="C.F." required>
 					<label for="cf" class="form__label">C.F.</label>
 				</div>
 
