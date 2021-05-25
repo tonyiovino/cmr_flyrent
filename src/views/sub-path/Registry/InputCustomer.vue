@@ -42,7 +42,7 @@ export default {
 
 	methods: {
 		...mapActions([
-			'addCustomer',
+			'addCustomer', 'addError', 'addLogMessage'
 		]),
 
 		customerSave (customer) {
