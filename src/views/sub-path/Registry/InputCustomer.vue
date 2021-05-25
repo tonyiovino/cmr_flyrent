@@ -4,14 +4,11 @@
 			<h1 class="heading-primary">Tipo del nuovo cliente</h1>
 		</template>
 
-		<!-- 2 pulsanti switch che mostrano l'input per il cliente privato, oppure aziendale -->
-		<!-- <app-btn v-if="isPrivate" @click="toggleType">Cliente aziendale</app-btn>
-		<app-btn v-else @click="toggleType">Cliente privato</app-btn> -->
 		<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-			<input type="radio" class="btn-check" name="private" id="private" autocomplete="off" checked>
+			<input type="radio" class="btn-check" name="private" id="private" v-model="type" value="private" autocomplete="off" checked>
 			<label class="btn btn-outline-primary" for="private">Privato</label>
 
-			<input type="radio" class="btn-check" name="company" id="company" autocomplete="off">
+			<input type="radio" class="btn-check" name="company" id="company" v-model="type" value="company" autocomplete="off">
 			<label class="btn btn-outline-primary" for="company">Aziendale</label>
 		</div>
 
@@ -60,10 +57,6 @@ export default {
 			.catch(err => {
 				this.addError(err.err)
 			})
-		},
-
-		toggleType () {
-			this.type = this.type === 'private' ? 'company' : 'private' 
 		}
 	},
 
