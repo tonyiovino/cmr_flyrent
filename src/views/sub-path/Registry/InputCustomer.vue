@@ -26,7 +26,7 @@ import InputCustomerPrivate from '@/components/Registry/InputCustomerPrivate.vue
 import { mapActions } from 'vuex'
 
 export default {
-	name: 'Input Customer',
+	name: 'InputCustomer',
 
 	data () {
 		return {
@@ -60,7 +60,7 @@ export default {
 		}
 	},
 
-	component: {
+	components: {
 		appInputCustomerCompany: InputCustomerCompany,
 		appInputCustomerPrivate: InputCustomerPrivate
 	}
