@@ -4,7 +4,7 @@
 			<h1 class="heading-primary">Gestione veicoli</h1>
 		</template>
 
-		<template v-slot:input>
+		<template v-slot:actions>
 			<app-input-vehicle
 				:id="$route.params.id"
 				@save="vehicleSave"

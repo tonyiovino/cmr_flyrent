@@ -3,9 +3,7 @@
 		<template v-slot:header>
 			<h1 class="heading-primary">Gestione veicoli</h1>
 		</template>
-		<!-- Bisogna cambiare name, input -> actions  -->
-		<!-- Altrimenti non lo visualizza -->
-		<template v-slot:input>
+		<template v-slot:actions>
 			<app-input-vehicle
 				@save="vehicleSave"
 			></app-input-vehicle>
@@ -31,15 +29,7 @@ export default {
 	computed: {
 		...mapGetters([
 			'vehicles'
-		]),
-
-		vehicleHeader () {
-			return {
-				brand: 'Marca',
-				model: 'Modello',
-				license_plate: 'Targa'
-			}
-		}
+		])
 	},
 
 	methods: {

@@ -5,7 +5,7 @@
 		<app-log-messages />
 
 		<div id="app__nav">
-			<app-text-link class="text-link--icon" path="/"><img id="app__icon" src="/img/icon-flyrent.png" alt="Error"></app-text-link>
+			<app-text-link class="text-link--icon" path="/"><img id="app__icon" src="/img/icon-flyrent.png" alt="Flyrent"></app-text-link>
 			<!-- <router-link to="/about" class="btn btn--primary">About</router-link> -->
 		</div>
 
