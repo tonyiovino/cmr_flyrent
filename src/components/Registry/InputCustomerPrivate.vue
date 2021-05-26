@@ -6,8 +6,23 @@
 		<app-form @submit="submit">
 			<div class="form__row">
 				<div class="form__group">
-					<input type="text" class="form__input" id="name" v-model.trim="name" placeholder="Cliente" required>
-					<label for="name" class="form__label">Cliente</label>
+					<input type="text" class="form__input" id="name" v-model.trim="name" placeholder="Nome Referente" required>
+					<label for="name" class="form__label">Nome Referente</label>
+				</div>
+
+				<div class="form__group">
+					<input type="text" class="form__input" id="surname" v-model.trim="surname" placeholder="Cognome Referente" required>
+					<label for="surname" class="form__label">Cognome Referente</label>
+				</div>
+
+				<div class="form__group">
+					<input type="text" class="form__input" id="fiscal_code" v-model.trim="fiscal_code" placeholder="Codice Fiscale Referente" required>
+					<label for="fiscal_code" class="form__label">Codice Fiscale Referente</label>
+				</div>
+
+				<div class="form__group">
+					<input type="text" class="form__input" id="address" v-model.trim="address" placeholder="Indirizzo Referente" required>
+					<label for="address" class="form__label">Indirizzo Referente</label>
 				</div>
 
 				<div class="form__group">
@@ -51,6 +66,9 @@ export default {
 	data () {
 		return {
 			name: '',
+			surname: '',
+			fiscal_code: '',
+			address: '',
 			iva: '',
 			email: '',
 			tel: ''
@@ -64,17 +82,28 @@ export default {
 
 		submit () {
 
-			if (this.name === '' || this.iva === '' || this.email === '' || this.tel === '') return
+			if (
+				this.name === ''
+				|| this.surname === ''
+				|| this.fiscal_code === ''
+				|| this.address === ''
+				|| this.iva === ''
+				|| this.email === ''
+				|| this.tel === ''
+			) return
 
 			this.$emit('save', {
 				id: this.id,
 				name: this.name,
+				surname: this.surname,
+				fiscal_code: this.fiscal_code,
+				address: this.address,
 				iva: this.iva,
 				email: this.email,
 				tel: this.tel
 			})
 
-			this.name = this.iva = this.email = this.tel = ''
+			this.name = this.surname = this.fiscal_code = this.address = this.iva = this.email = this.tel = ''
 
 			this.addLogMessage('Salvataggio in corso')
 		}
@@ -84,6 +113,9 @@ export default {
 		if (this.id) {
 			const customer = this.customerById(this.id)
 			this.name = customer.name
+			this.surname = customer.surname
+			this.fiscal_code = customer.fiscal_code
+			this.address = customer.address
 			this.iva = customer.iva
 			this.email = customer.email
 			this.tel = customer.tel
