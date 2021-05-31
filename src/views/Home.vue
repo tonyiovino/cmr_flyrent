@@ -1,7 +1,7 @@
 <template>
 	<app-page>
 		<template v-slot:header>
-			<h1 class="heading-primary">qualcos'altro</h1>
+			<h1 class="heading-primary">Pagina Principale</h1>
 		</template>
 
 		<div class="home-grid">
@@ -18,7 +18,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-	name: 'Home',
+	name: 'PaginaPrincipale',
 
 	computed: {
 		...mapGetters([

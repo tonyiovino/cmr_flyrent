@@ -39,6 +39,11 @@
 					<input type="tel" class="form__input" id="tel" v-model.trim="tel" placeholder="Tel." required>
 					<label for="tel" class="form__label">Tel.</label>
 				</div>
+
+				<div class="form__group">
+					<input type="tel" class="form__input" id="cell" v-model.trim="cell" placeholder="Cell." required>
+					<label for="cell" class="form__label">Cell.</label>
+				</div>
 			</div>
 
 			<div class="form__actions">
@@ -90,6 +95,7 @@ export default {
 				|| this.iva === ''
 				|| this.email === ''
 				|| this.tel === ''
+				|| this.cell === ''
 			) return
 
 			this.$emit('save', {
@@ -100,10 +106,11 @@ export default {
 				address: this.address,
 				iva: this.iva,
 				email: this.email,
-				tel: this.tel
+				tel: this.tel,
+				cell: this.cell
 			})
 
-			this.name = this.surname = this.fiscal_code = this.address = this.iva = this.email = this.tel = ''
+			this.name = this.surname = this.fiscal_code = this.address = this.iva = this.email = this.tel = this.cell = ''
 
 			this.addLogMessage('Salvataggio in corso')
 		}
@@ -119,6 +126,7 @@ export default {
 			this.iva = customer.iva
 			this.email = customer.email
 			this.tel = customer.tel
+			this.cell = customer.cell
 		}
 	}
 }

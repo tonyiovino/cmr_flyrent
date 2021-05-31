@@ -60,7 +60,7 @@ const state = {
 			id: '9',
 			name: 'vehicles',
 			title: 'Gestione veicoli',
-			text: 'In Work',
+			text: 'In Work (Testing)',
 			path: '/vehicles'
 		},
 	],
