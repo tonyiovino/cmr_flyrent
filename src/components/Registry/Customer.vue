@@ -7,7 +7,7 @@
 			<span class="customer__data">
 				{{ ext_data.iva_cf }}
 				{{ ext_data.iva }}
-				{{ ext_data.cf }}
+				{{ ext_data.fiscal_code }}
 			</span>
 			<span class="customer__data">
 				{{ ext_data.email }}
