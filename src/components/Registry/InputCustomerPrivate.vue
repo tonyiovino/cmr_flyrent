@@ -37,7 +37,7 @@
 
 				<div class="form__group">
 					<!-- <input type="text" class="form__input" id="cap" v-model.trim="cap" placeholder="Provincia" required> -->
-					<select class="form__input" id="province" v-model.trim="province" placeholder="Provincia">
+					<select class="form__input" id="province" v-model.trim="province" placeholder="Provincia" required>
 						<option>Avellino</option>
 						<option>Benevento</option>
 						<option>Caserta</option>
@@ -93,6 +93,7 @@ export default {
 			address: '',
 			municipality: '',
 			cap: '',
+			province: '',
 			email: '',
 			tel: '',
 			cell: ''
@@ -113,6 +114,7 @@ export default {
 				|| this.address === ''
 				|| this.municipality === ''
 				|| this.cap === ''
+				|| this.province === ''
 				|| this.email === ''
 				|| this.tel === ''
 				|| this.cell === ''
@@ -126,12 +128,13 @@ export default {
 				address: this.address,
 				municipality: this.municipality,
 				cap: this.cap,
+				province: this.province,
 				email: this.email,
 				tel: this.tel,
 				cell: this.cell
 			})
 
-			this.name = this.surname = this.fiscal_code = this.address = this.municipality = this.cap = this.email = this.tel = this.cell = ''
+			this.name = this.surname = this.fiscal_code = this.address = this.municipality = this.cap = this.province = this.email = this.tel = this.cell = ''
 
 			this.addLogMessage('Salvataggio in corso')
 		}
@@ -146,6 +149,7 @@ export default {
 			this.address = customer.address
 			this.municipality = customer.municipality
 			this.cap = customer.cap
+			this.province = customer.province
 			this.email = customer.email
 			this.tel = customer.tel
 			this.cell = customer.cell
