@@ -26,8 +26,25 @@
 				</div>
 
 				<div class="form__group">
-					<input type="text" class="form__input" id="iva" v-model.trim="iva" placeholder="P.Iva" required>
-					<label for="iva" class="form__label">P.Iva</label>
+					<input type="text" class="form__input" id="municipality" v-model.trim="municipality" placeholder="Comune" required>
+					<label for="municipality" class="form__label">Comune</label>
+				</div>
+
+				<div class="form__group">
+					<input type="text" class="form__input" id="cap" v-model.trim="cap" placeholder="CAP Referente" required>
+					<label for="cap" class="form__label">CAP Referente</label>
+				</div>
+
+				<div class="form__group">
+					<!-- <input type="text" class="form__input" id="cap" v-model.trim="cap" placeholder="Provincia" required> -->
+					<select class="form__input" id="province" v-model.trim="province" placeholder="Provincia">
+						<option>Avellino</option>
+						<option>Benevento</option>
+						<option>Caserta</option>
+						<option>Napoli</option>
+						<option>Salerno</option>
+					</select>
+					<label for="cap" class="form__label">Provincia</label>
 				</div>
 
 				<div class="form__group">
@@ -74,9 +91,11 @@ export default {
 			surname: '',
 			fiscal_code: '',
 			address: '',
-			iva: '',
+			municipality: '',
+			cap: '',
 			email: '',
-			tel: ''
+			tel: '',
+			cell: ''
 		}
 	},
 
@@ -92,7 +111,8 @@ export default {
 				|| this.surname === ''
 				|| this.fiscal_code === ''
 				|| this.address === ''
-				|| this.iva === ''
+				|| this.municipality === ''
+				|| this.cap === ''
 				|| this.email === ''
 				|| this.tel === ''
 				|| this.cell === ''
@@ -104,13 +124,14 @@ export default {
 				surname: this.surname,
 				fiscal_code: this.fiscal_code,
 				address: this.address,
-				iva: this.iva,
+				municipality: this.municipality,
+				cap: this.cap,
 				email: this.email,
 				tel: this.tel,
 				cell: this.cell
 			})
 
-			this.name = this.surname = this.fiscal_code = this.address = this.iva = this.email = this.tel = this.cell = ''
+			this.name = this.surname = this.fiscal_code = this.address = this.municipality = this.cap = this.email = this.tel = this.cell = ''
 
 			this.addLogMessage('Salvataggio in corso')
 		}
@@ -123,7 +144,8 @@ export default {
 			this.surname = customer.surname
 			this.fiscal_code = customer.fiscal_code
 			this.address = customer.address
-			this.iva = customer.iva
+			this.municipality = customer.municipality
+			this.cap = customer.cap
 			this.email = customer.email
 			this.tel = customer.tel
 			this.cell = customer.cell

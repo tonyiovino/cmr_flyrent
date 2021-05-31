@@ -82,7 +82,6 @@
 		appearance: none;
 		border: none;
 		padding: 1rem;
-		background-color: lighten($color-grey-light, 90%);
 		outline: 1px solid $color-primary-dark;
 		width: 100%;
 	}
