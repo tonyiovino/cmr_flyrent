@@ -14,7 +14,6 @@
 					<input type="text" class="form__input" id="surname" v-model.trim="surname" placeholder="Cognome Referente" required>
 					<label for="surname" class="form__label">Cognome Referente</label>
 				</div>
-
 				<div class="form__group">
 					<input type="text" class="form__input" id="fiscal_code" v-model.trim="fiscal_code" placeholder="Codice Fiscale Referente" required>
 					<label for="fiscal_code" class="form__label">Codice Fiscale Referente</label>
@@ -24,7 +23,9 @@
 					<input type="text" class="form__input" id="address" v-model.trim="address" placeholder="Indirizzo Referente" required>
 					<label for="address" class="form__label">Indirizzo Referente</label>
 				</div>
+			</div>
 
+			<div class="form__row">
 				<div class="form__group">
 					<input type="text" class="form__input" id="municipality" v-model.trim="municipality" placeholder="Comune" required>
 					<label for="municipality" class="form__label">Comune</label>
@@ -38,15 +39,18 @@
 				<div class="form__group">
 					<!-- <input type="text" class="form__input" id="cap" v-model.trim="cap" placeholder="Provincia" required> -->
 					<select class="form__input" id="province" v-model.trim="province" placeholder="Provincia" required>
-						<option>Avellino</option>
-						<option>Benevento</option>
-						<option>Caserta</option>
-						<option>Napoli</option>
-						<option>Salerno</option>
+						<option value="">---</option>
+						<option value="Av">Avellino</option>
+						<option value="Bn">Benevento</option>
+						<option value="Ce">Caserta</option>
+						<option value="Na">Napoli</option>
+						<option value="Sa">Salerno</option>
 					</select>
-					<label for="cap" class="form__label">Provincia</label>
+					<label for="province" class="form__label">Provincia</label>
 				</div>
+			</div>
 
+			<div class="form__row">
 				<div class="form__group">
 					<input type="email" class="form__input" id="email" v-model.trim="email" placeholder="Email" required>
 					<label for="email" class="form__label">Email</label>
@@ -135,7 +139,7 @@ export default {
 			})
 
 			this.name = this.surname = this.fiscal_code = this.address = this.municipality = this.cap = this.province = this.email = this.tel = this.cell = ''
-
+			this.$router.push('/registry')
 			this.addLogMessage('Salvataggio in corso')
 		}
 	},

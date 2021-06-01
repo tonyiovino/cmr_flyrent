@@ -9,9 +9,12 @@
 			<app-text-link path="/input_customer">Aggiungi cliente</app-text-link>
 		</template>
 
+		<div class="find-element">
+			<input type="text" @input="filter">	
+		</div>
 		<app-list>
 			<app-customer />
-			<app-customer v-for="customer in customers" :key="customer.id"
+			<app-customer v-for="customer in customersFiltered" :key="customer.id"
 				:data="customer"
 				@clicked="customerClicked"
 				@delete="customerDelete"
@@ -26,6 +29,12 @@ import Customer from '@/components/Registry/Customer.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+
+	data () {
+		return {
+			customersFiltered: []
+		}
+	},
 
 	computed: {
 		...mapGetters([
@@ -60,6 +69,19 @@ export default {
 				this.addError(err.err)
 			})
 		},
+
+		filter (event) {
+			const key = event.target.value.toLowerCase()
+			this.customersFiltered = this.customers.filter(customer => {
+				return Object.values(customer).slice(1).reduce((acc, value) => {
+					return acc || value.toLowerCase().includes(key)
+				}, false)
+			})
+		}
+	},
+
+	created () {
+		this.customersFiltered = [ ...this.customers ]
 	},
 
 	components: {
