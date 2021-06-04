@@ -6,12 +6,14 @@
 
 		<template v-slot:actions>
 			<!-- card -->
-			<app-text-link path="/input_customer">Aggiungi cliente</app-text-link>
+			<app-text-link path="/registry/input_customer">Aggiungi cliente</app-text-link>
 		</template>
 
 		<div class="find-element">
-			<input type="text" @input="filter">	
+			<span>Filtra Ancora:</span>
+			<input type="text" @input="filter" placeholder="Cerca in questa tabella...">	
 		</div>
+
 		<app-list>
 			<app-customer />
 			<app-customer v-for="customer in customersFiltered" :key="customer.id"
@@ -57,7 +59,7 @@ export default {
 		]),
 
 		customerClicked (customerId) {
-			this.$router.push('/registry/' + customerId)
+			this.$router.push('/registry/edit_customer/' + customerId)
 		},
 
 		customerDelete (customerId) {

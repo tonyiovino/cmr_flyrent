@@ -72,7 +72,7 @@ const routes = [
 		component: Vehicles
 	},
 	{
-		path: '/registry/:id',
+		path: '/registry/edit_customer/:id',
 		name: 'EditCustomer',
 		component: EditCustomer
 	},
@@ -82,7 +82,7 @@ const routes = [
 		component: EditVehicle
 	},
 	{
-		path: '/input_customer',
+		path: '/registry/input_customer',
 		name: 'InputCustomer',
 		component: InputCustomer
 	},
