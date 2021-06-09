@@ -40,10 +40,6 @@ export default {
 				this.$router.push('/registry')
 			})
 		},
-
-		helloTest () {
-			console.log('hey')
-		}
 	},
 
 	components: {
