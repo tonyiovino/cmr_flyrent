@@ -8,12 +8,15 @@
 				{{ ext_data.iva_cf }}
 				{{ ext_data.iva }}
 				{{ ext_data.fiscal_code }}
+				{{ ext_data.company_code }}
 			</span>
 			<span class="customer__data">
 				{{ ext_data.email }}
 			</span>
 			<span class="customer__data">
 				{{ ext_data.tel }}
+				<br>
+				{{ ext_data.cell }}
 			</span>
 		</template>
 		<template v-slot:actions>
@@ -39,7 +42,7 @@ export default {
 			this.ext_data.name = 'Cliente'
 			this.ext_data.iva_cf = 'P.Iva/C.F.'
 			this.ext_data.email = 'Email'
-			this.ext_data.tel = 'Tel.'
+			this.ext_data.tel = 'Tel./Mobile'
 			this.isHeader = true
 		}
 	}

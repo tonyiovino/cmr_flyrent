@@ -16,6 +16,7 @@
 					<input type="text" class="form__input" id="surname" v-model.trim="surname" placeholder="Cognome Referente" required>
 					<label for="surname" class="form__label">Cognome Referente</label>
 				</div>
+
 				<div class="form__group">
 					<input type="text" class="form__input" id="fiscal_code" v-model.trim="fiscal_code" placeholder="Codice Fiscale Referente" required>
 					<label for="fiscal_code" class="form__label">Codice Fiscale Referente</label>
@@ -29,8 +30,8 @@
 
 			<div class="form__row">
 				<div class="form__group">
-					<input type="text" class="form__input" id="municipality" v-model.trim="municipality" placeholder="Comune" required>
-					<label for="municipality" class="form__label">Comune</label>
+					<input type="text" class="form__input" id="municipality" v-model.trim="municipality" placeholder="Comune *">
+					<label for="municipality" class="form__label">Comune *</label>
 				</div>
 
 				<div class="form__group">
@@ -39,7 +40,6 @@
 				</div>
 
 				<div class="form__group">
-					<!-- <input type="text" class="form__input" id="cap" v-model.trim="cap" placeholder="Provincia" required> -->
 					<select class="form__input" id="province" v-model.trim="province" placeholder="Provincia" required>
 						<option value="">---</option>
 						<option value="Av">Avellino</option>
@@ -140,7 +140,17 @@ export default {
 				cell: this.cell
 			})
 
-			this.name = this.surname = this.fiscal_code = this.address = this.municipality = this.cap = this.province = this.email = this.tel = this.cell = ''
+			this.name
+			= this.surname
+			= this.fiscal_code
+			= this.address
+			= this.municipality
+			= this.cap
+			= this.province
+			= this.email
+			= this.tel
+			= this.cell = ''
+
 			this.addLogMessage('Salvataggio in corso')
 			this.$router.push('/registry')
 		},
@@ -148,7 +158,7 @@ export default {
 		fillAll () {
 
 			let numName = Math.random()
-			if (numName < 0.3){
+			if (numName < 0.3) {
 				this.name = 'Gianni'
 			} else if (numName < 0.6) {
 				this.name = 'Luca'
@@ -157,7 +167,7 @@ export default {
 			}
 
 			let numSurname = Math.random()
-			if (numSurname < 0.3){
+			if (numSurname < 0.3) {
 				this.surname = 'Rossi'
 			} else if (numSurname < 0.6) {
 				this.surname = 'Verdi'
@@ -166,7 +176,7 @@ export default {
 			}
 
 			let numFiscalCode = Math.random()
-			if (numFiscalCode < 0.3){
+			if (numFiscalCode < 0.3) {
 				this.fiscal_code = 'GRSBDT04M44F839Z'
 			} else if (numFiscalCode < 0.6) {
 				this.fiscal_code = 'LZZFLV04H69A944J'
@@ -175,7 +185,7 @@ export default {
 			}
 
 			let numAddres = Math.random()
-			if (numAddres < 0.3){
+			if (numAddres < 0.3) {
 				this.address = 'Via Milano 8'
 			} else if (numAddres < 0.6) {
 				this.address = 'Via Bologna 4'
@@ -184,7 +194,7 @@ export default {
 			}
 
 			let numMunicipality = Math.random()
-			if (numMunicipality < 0.3){
+			if (numMunicipality < 0.3) {
 				this.municipality = 'Casoria'
 			} else if (numMunicipality < 0.6) {
 				this.municipality = 'Secondigliano'
@@ -193,7 +203,7 @@ export default {
 			}
 
 			let numCap = Math.random()
-			if (numCap < 0.3){
+			if (numCap < 0.3) {
 				this.cap = '80038'
 			} else if (numCap < 0.6) {
 				this.cap = '80053'
@@ -202,7 +212,7 @@ export default {
 			}
 
 			let numProvince = Math.random()
-			if (numProvince < 0.3){
+			if (numProvince < 0.3) {
 				this.province = 'Ce'
 			} else if (numProvince < 0.6) {
 				this.province = 'Na'
@@ -211,7 +221,7 @@ export default {
 			}
 
 			let numEmail = Math.random()
-			if (numEmail < 0.3){
+			if (numEmail < 0.3) {
 				this.email = 'tribalix17@gmail.com'
 			} else if (numEmail < 0.6) {
 				this.email = 'flexiumux89@gmail.com'
@@ -220,7 +230,7 @@ export default {
 			}
 
 			let numTell = Math.random()
-			if (numTell < 0.3){
+			if (numTell < 0.3) {
 				this.tel = '0813849242'
 			} else if (numTell < 0.6) {
 				this.tel = '0815373293'
@@ -229,7 +239,7 @@ export default {
 			}
 
 			let numCell = Math.random()
-			if (numCell < 0.3){
+			if (numCell < 0.3) {
 				this.cell = '3383536902'
 			} else if (numCell < 0.6) {
 				this.cell = '3510952639'
