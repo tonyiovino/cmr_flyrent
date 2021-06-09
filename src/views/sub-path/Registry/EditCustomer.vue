@@ -4,14 +4,12 @@
 			<h1 class="heading-primary">Gestione anagrafica</h1>
 		</template>
 
-		<app-input-customer-private
-			v-if="fiscal_code"
+		<app-input-customer-private v-if="type"
 			:id="$route.params.id"
 			@save="customerSave"
 		></app-input-customer-private>
 
-		<app-input-customer-company
-			v-else
+		<app-input-customer-company v-else
 			:id="$route.params.id"
 			@save="customerSave"
 		></app-input-customer-company>
@@ -25,10 +23,6 @@ import InputCustomerCompany from '@/components/Registry/InputCustomerCompany.vue
 import { mapActions } from 'vuex'
 
 export default {
-	components: {
-		appInputCustomerPrivate: InputCustomerPrivate,
-		appInputCustomerCompany: InputCustomerCompany
-	},
 
 	methods: {
 		...mapActions([
@@ -45,7 +39,16 @@ export default {
 				this.addError(err.err)
 				this.$router.push('/registry')
 			})
+		},
+
+		helloTest () {
+			console.log('hey')
 		}
+	},
+
+	components: {
+		appInputCustomerPrivate: InputCustomerPrivate,
+		appInputCustomerCompany: InputCustomerCompany
 	}
 }
 </script>

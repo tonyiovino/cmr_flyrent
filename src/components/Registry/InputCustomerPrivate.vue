@@ -85,14 +85,9 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
 	props: [ 'id' ],
 
-	computed: {
-		...mapGetters([
-			'customerById'
-		])
-	},
-
 	data () {
 		return {
+			type: 'private',
 			name: '',
 			surname: '',
 			fiscal_code: '',
@@ -104,6 +99,12 @@ export default {
 			tel: '',
 			cell: ''
 		}
+	},
+
+	computed: {
+		...mapGetters([
+			'customerById'
+		])
 	},
 
 	methods: {
@@ -127,6 +128,7 @@ export default {
 			) return
 
 			this.$emit('save', {
+				type: this.type,
 				id: this.id,
 				name: this.name,
 				surname: this.surname,
@@ -156,6 +158,7 @@ export default {
 		},
 
 		fillAll () {
+			this.type = 'private'
 
 			let numName = Math.random()
 			if (numName < 0.3) {
@@ -252,6 +255,7 @@ export default {
 	created () {
 		if (this.id) {
 			const customer = this.customerById(this.id)
+			this.type = customer.type
 			this.name = customer.name
 			this.surname = customer.surname
 			this.fiscal_code = customer.fiscal_code

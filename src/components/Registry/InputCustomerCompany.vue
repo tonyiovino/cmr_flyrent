@@ -128,6 +128,7 @@ export default {
 
 	data () {
 		return {
+			type: 'company',
 			business_name: '',
 			company_type: '',
 			iva: '',
@@ -169,6 +170,7 @@ export default {
 			) return
 
 			this.$emit('save', {
+				type: this.type,
 				id: this.id,
 				business_name: this.business_name,
 				company_type: this.company_type,
@@ -204,6 +206,7 @@ export default {
 		},
 
 		fillAll(){
+			this.type = 'company'
 
 			let numBusiness_name = Math.random()
 			if (numBusiness_name < 0.3) {
@@ -327,6 +330,7 @@ export default {
 	created () {
 		if (this.id) {
 			const customer = this.customerById(this.id)
+			this.type = customer.type
 			this.business_name = customer.business_name
 			this.company_type = customer.company_type
 			this.iva = customer.iva
